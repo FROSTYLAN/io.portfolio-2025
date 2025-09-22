@@ -3,23 +3,38 @@ import './Navbar.css';
 
 const Navbar = () => {
   return (
-    <nav className="navbar">
-      <div className="navbar-container">
-        <a href="#inicio" className="nav-item active">
-          Inicio
-          <span className="active-indicator"></span>
-        </a>
-        <a href="#sobre-mi" className="nav-item">
-          Sobre mí
-        </a>
-        <a href="#experiencia" className="nav-item">
-          Experiencia
-        </a>
-        <a href="#contacto" className="nav-item">
-          Contacto
-        </a>
-      </div>
-    </nav>
+    <>
+      <NavBarWrapper scrolled={scrolled}>
+        <Container>
+          <NavContent>
+            <Logo>
+              Charles<span>.</span>
+            </Logo>
+            
+            <NavLinks isOpen={mobileMenuOpen}>
+              {navItems.map((item) => (
+                <NavLink
+                  key={item.id}
+                  className={activeSection === item.id ? 'active' : ''}
+                  onClick={() => scrollToSection(item.id)}
+                >
+                  {item.label}
+                </NavLink>
+              ))}
+            </NavLinks>
+            
+            <MobileMenuButton onClick={toggleMobileMenu}>
+              {mobileMenuOpen ? '✕' : '☰'}
+            </MobileMenuButton>
+          </NavContent>
+        </Container>
+      </NavBarWrapper>
+      
+      <MobileOverlay 
+        isOpen={mobileMenuOpen} 
+        onClick={() => setMobileMenuOpen(false)} 
+      />
+    </>
   );
 };
 
