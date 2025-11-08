@@ -8,4 +8,5 @@ export { default as ExperienceCard } from './ExperienceCard/ExperienceCard';
 export { default as Logo } from './Logo/Logo';
 export { default as NavLink } from './NavLink/NavLink';
 export { default as MobileMenuButton } from './MobileMenuButton/MobileMenuButton';
+export { default as Elipse } from './Elipse/Elipse';
 export * from './TechIcon/TechIcons';
