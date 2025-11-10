@@ -150,7 +150,7 @@ const experienceData = [
   }
 ];
 
-const ExperienceSection = () => {
+const Experience = () => {
   return (
     <ExperienceSectionWrapper>
       <Container>
@@ -224,4 +224,4 @@ const ExperienceSection = () => {
   );
 };
 
-export default ExperienceSection;
+export default Experience;

@@ -1,4 +1,4 @@
-import { NavBar, Hero, TechSection, AboutSection, ProjectsSection, ExperienceSection, Footer } from './components/organisms';
+import { NavBar, Hero, Techs, AboutMe, Projects, Experience, Footer } from './components/organisms';
 import './App.css'
 
 function App() {
@@ -8,13 +8,13 @@ function App() {
       <div id="inicio">
         <Hero />
       </div>
-      <TechSection />
+      <Techs />
       <div id="sobre-mi">
-        <AboutSection />
+        <AboutMe />
       </div>
-      <ProjectsSection />
+      <Projects />
       <div id="experiencia">
-        <ExperienceSection />
+        <Experience />
       </div>
       <div id="contacto">
         <Footer />

@@ -117,7 +117,7 @@ const technologies = [
   { icon: FlutterIcon, name: 'Flutter', color: '#02569B' }
 ];
 
-const TechSection = () => {
+const Techs = () => {
   return (
     <TechSectionWrapper>
       <Container>
@@ -196,4 +196,4 @@ const TechSection = () => {
   );
 };
 
-export default TechSection;
+export default Techs;

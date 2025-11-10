@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Typography, Button, Container, Elipse } from '../../atoms';
+import { Typography, Button, Container } from '../../atoms';
 
 const HeroSection = styled.section`
   min-height: 100vh;
@@ -163,7 +163,6 @@ const Hero = () => {
             <Typography variant="h1" color="#ffffff" fontFamily="Tilt Neon">
               Desarrollador Web
             </Typography>
-            <Elipse />
             
             <Typography 
               variant="subtitle" 

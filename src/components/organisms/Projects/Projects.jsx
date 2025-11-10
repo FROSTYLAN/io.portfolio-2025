@@ -143,7 +143,7 @@ const projectsData = [
   }
 ];
 
-const ProjectsSection = () => {
+const Projects = () => {
   return (
     <ProjectsSectionWrapper>
       <Container>
@@ -218,4 +218,4 @@ const ProjectsSection = () => {
   );
 };
 
-export default ProjectsSection;
+export default Projects;

@@ -107,7 +107,7 @@ const aboutData = [
   }
 ];
 
-const AboutSection = () => {
+const AboutMe = () => {
   return (
     <AboutSectionWrapper>
       <Container>
@@ -195,4 +195,4 @@ const AboutSection = () => {
   );
 };
 
-export default AboutSection;
+export default AboutMe;
