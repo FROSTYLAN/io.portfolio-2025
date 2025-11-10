@@ -1,0 +1,70 @@
+/* Estilos para el Navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: linear-gradient(180deg, #000000 0%, #0a1a0a 100%);
+  border-bottom: 2px solid #b9ff66;
+  backdrop-filter: blur(10px);
+  box-shadow: 0px 2px 1px 0px #b9ff6614;
+}
+
+.navbar-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60px;
+  padding: 0 12px;
+  max-width: 1440px;
+  margin: 0 auto;
+  gap: 8px;
+}
+
+.nav-item {
+  position: relative;
+  padding: 8px 16px;
+  color: #ffffff;
+  font-family: Inter, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", SimHei, Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: 0;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.nav-item:hover {
+  color: #b9ff66;
+}
+
+.nav-item.active {
+  color: #b9ff66;
+}
+
+.active-indicator {
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 4px;
+  background: #b9ff66;
+  border-radius: 50%;
+  box-shadow: 0px 2px 2px 0px #ffffff40;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .navbar-container {
+    gap: 4px;
+  }
+  
+  .nav-item {
+    padding: 8px 12px;
+    font-size: 13px;
+  }
+}
