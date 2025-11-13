@@ -1,0 +1,63 @@
+.hero {
+    width: 100%;
+    height: 100vh;
+    background-color: #000;
+}
+
+.hero__green-gradient {
+    position: absolute;
+    bottom: -10px;
+    right: 0px;
+}
+
+.hero__atom {
+    position: absolute;
+    bottom: -10px;
+    right: 0px;
+}
+
+.hero__charles {
+    position: absolute;
+    scale: 0.8;
+    bottom: -80px;
+    right: 0;
+}
+
+.hero__in-icon {
+    position: absolute;
+    bottom: 280px;
+    right: 0px;
+}
+
+.hero__gh-icon {
+    position: absolute;
+    bottom: -10px;
+    right: 650px;
+}
+
+.hero__atom-2 {
+    position: absolute;
+    scale: 1.6;
+    bottom: -100px;
+    left: -160px;
+    transform: scale(0.5);
+}
+
+.hero__atom-3 {
+    position: absolute;
+    top: -100px;
+    right: -240px;
+    transform: scale(0.5);
+}
+
+.hero__content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    width: 100%;
+    height: 100%;
+    padding: 100px;
+
+    transform: translate(-50%, -50%);
+}
