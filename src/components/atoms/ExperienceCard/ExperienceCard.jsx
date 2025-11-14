@@ -2,9 +2,10 @@ import styled from 'styled-components';
 import { Typography } from '../index';
 
 const ExperienceCardWrapper = styled.div`
-  background: rgba(26, 26, 26, 0.8);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 16px;
+  border-radius: 23px;
+  border: 1px solid #3C4434;
+  background: linear-gradient(103deg, #0F1408 16.66%, rgba(23, 32, 9, 0.27) 81.61%);
+
   padding: 32px;
   transition: all 0.3s ease;
   position: relative;
@@ -13,20 +14,7 @@ const ExperienceCardWrapper = styled.div`
   align-items: center;
   gap: 24px;
   backdrop-filter: blur(10px);
-  
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 3px;
-    background: linear-gradient(90deg, #00ff88, #00cc6a);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    border-radius: 16px 16px 0 0;
-  }
-  
+
   &:hover {
     transform: translateY(-8px);
     border-color: rgba(0, 255, 136, 0.3);
@@ -51,9 +39,8 @@ const ExperienceCardWrapper = styled.div`
 `;
 
 const IconContainer = styled.div`
-  width: 80px;
-  height: 80px;
-  background: ${props => props.bg || 'linear-gradient(135deg, #00ff88, #00cc6a)'};
+  width: 96px;
+  height: 96px;
   border-radius: 16px;
   display: flex;
   align-items: center;
@@ -62,6 +49,18 @@ const IconContainer = styled.div`
   position: relative;
   overflow: hidden;
   
+  /* Recorta todo el contenido/overlay a la silueta del icono */
+  -webkit-mask-image: url(${props => props.maskSrc || ''});
+  mask-image: url(${props => props.maskSrc || ''});
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+  mask-mode: alpha;
+  
+  /* Overlay de reflejo (espejo) que se mueve dentro del icono */
   &::before {
     content: '';
     position: absolute;
@@ -69,33 +68,56 @@ const IconContainer = styled.div`
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.1) 50%, transparent 70%);
-    transform: translateX(-100%);
-    transition: transform 0.6s ease;
+    background: linear-gradient(45deg, transparent 35%, rgba(255,255,255,0.26) 50%, transparent 65%);
+    transform: translateX(-150%);
+    transition: transform 0.9s ease;
+    pointer-events: none;
+    mix-blend-mode: screen;
+    z-index: 2;
   }
   
-  ${ExperienceCardWrapper}:hover & {
-    &::before {
-      transform: translateX(100%);
-    }
+  ${ExperienceCardWrapper}:hover &::before {
+    transform: translateX(150%);
+  }
+  
+  
+  /* Brillo aplicado solo al gráfico (svg/img), no al contenedor */
+  & svg, & img {
+    transition: filter 0.35s ease, transform 0.3s ease;
+    will-change: filter, transform;
+    z-index: 1;
+    width: 96px;
+    height: 96px;
+  }
+  
+  ${ExperienceCardWrapper}:hover & svg,
+  ${ExperienceCardWrapper}:hover & img {
+    filter: drop-shadow(0 0 12px rgba(0, 255, 136, 0.6)) brightness(1.1) saturate(1.05);
+    transform: translateZ(0);
   }
   
   @media (max-width: 768px) {
-    width: 60px;
-    height: 60px;
+    width: 72px;
+    height: 72px;
     border-radius: 12px;
+    
+    & svg, & img {
+      width: 72px;
+      height: 72px;
+    }
   }
 `;
 
 const IconSvg = styled.svg`
-  width: 40px;
-  height: 40px;
+  width: 96px;
+  height: 96px;
   fill: white;
   z-index: 1;
+  transition: filter 0.35s ease, transform 0.3s ease;
   
   @media (max-width: 768px) {
-    width: 30px;
-    height: 30px;
+    width: 72px;
+    height: 72px;
   }
 `;
 
@@ -111,11 +133,12 @@ const ExperienceCard = ({
   description, 
   icon,
   iconBg,
+  iconMaskSrc,
   ...props 
 }) => {
   return (
     <ExperienceCardWrapper {...props}>
-      <IconContainer bg={iconBg}>
+      <IconContainer bg={iconBg} maskSrc={iconMaskSrc}>
         {typeof icon === 'string' ? (
           <IconSvg viewBox="0 0 24 24">
             <path d={icon} />

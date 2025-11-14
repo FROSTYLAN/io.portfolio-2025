@@ -107,7 +107,7 @@ const FloatingShape = styled.div`
   bottom: ${props => props.bottom};
   animation: floatSlow 6s ease-in-out infinite;
   animation-delay: ${props => props.delay || '0s'};
-  opacity: 0.3;
+  opacity: ${props => props.opacity || '0.1'};
   
   @keyframes floatSlow {
     0%, 100% { transform: translateY(0px) rotate(0deg); }
@@ -172,6 +172,7 @@ const Techs = () => {
           </CarouselViewport>
         </TechContent>
       </Container>
+      <Divider direction='right'/>
       <FloatingShape
         top="10%"
         left="5%"
@@ -179,26 +180,26 @@ const Techs = () => {
         mobileSize="80px"
         rounded
         delay="0s"
-        bg="rgba(0, 255, 136, 0.05)"
+        bg="rgba(185, 255, 102, 0.8)"
       />
 
-      <FloatingShape
-        bottom="15%"
-        right="8%"
+      <FloatingShape 
+        bottom="15%" 
+        right="8%" 
         size="80px"
         mobileSize="50px"
         delay="2s"
-        bg="rgba(0, 255, 136, 0.08)"
+        bg="rgba(185, 255, 102, 0.7)"
       />
 
-      <FloatingShape
-        top="60%"
-        left="10%"
+      <FloatingShape 
+        top="60%" 
+        left="10%" 
         size="60px"
         mobileSize="40px"
         rounded
         delay="4s"
-        bg="rgba(0, 255, 136, 0.06)"
+        bg="rgba(185, 255, 102, 0.75)"
       />
     </TechSectionWrapper>
   );

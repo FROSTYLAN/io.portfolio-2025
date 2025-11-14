@@ -1,5 +1,9 @@
 import styled from 'styled-components';
 import { Typography, Container, ExperienceCard } from '../../atoms';
+import frontendIcon from './frontend-icon.svg';
+import fullstackIcon from './fullstack-icon.svg';
+import freelanceIcon from './freelance-icon.svg';
+import leaderIcon from './leader-icon.svg';
 
 const ExperienceSectionWrapper = styled.section`
   padding: 80px 0;
@@ -92,31 +96,21 @@ const FloatingShape = styled.div`
   }
 `;
 
-// SVG Icons for each role
+// Iconos desde archivos SVG (carpeta Experience)
 const FrontendIcon = () => (
-  <svg viewBox="0 0 24 24" width="40" height="40" fill="white">
-    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
-  </svg>
+  <img src={frontendIcon} alt="Frontend" />
 );
 
 const FullStackIcon = () => (
-  <svg viewBox="0 0 24 24" width="40" height="40" fill="white">
-    <path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"/>
-    <circle cx="6" cy="18" r="2"/>
-    <circle cx="18" cy="18" r="2"/>
-  </svg>
+  <img src={fullstackIcon} alt="Fullstack" />
 );
 
 const FreelanceIcon = () => (
-  <svg viewBox="0 0 24 24" width="40" height="40" fill="white">
-    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-  </svg>
+  <img src={freelanceIcon} alt="Freelance" />
 );
 
 const LeaderIcon = () => (
-  <svg viewBox="0 0 24 24" width="40" height="40" fill="white">
-    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-  </svg>
+  <img src={leaderIcon} alt="Líder" />
 );
 
 const experienceData = [
@@ -125,6 +119,7 @@ const experienceData = [
     title: "Lead Frontend Developer",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tem.",
     icon: <FrontendIcon />,
+    iconMaskSrc: frontendIcon,
     iconBg: "linear-gradient(135deg, #00ff88, #00cc6a)"
   },
   {
@@ -132,6 +127,7 @@ const experienceData = [
     title: "Full Stack Developer",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tem.",
     icon: <FullStackIcon />,
+    iconMaskSrc: fullstackIcon,
     iconBg: "linear-gradient(135deg, #00cc6a, #009955)"
   },
   {
@@ -139,6 +135,7 @@ const experienceData = [
     title: "Freelance Developer",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tem.",
     icon: <FreelanceIcon />,
+    iconMaskSrc: freelanceIcon,
     iconBg: "linear-gradient(135deg, #009955, #007744)"
   },
   {
@@ -146,6 +143,7 @@ const experienceData = [
     title: "Head of Development Area",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tem.",
     icon: <LeaderIcon />,
+    iconMaskSrc: leaderIcon,
     iconBg: "linear-gradient(135deg, #007744, #005533)"
   }
 ];
@@ -173,6 +171,7 @@ const Experience = () => {
                 description={experience.description}
                 icon={experience.icon}
                 iconBg={experience.iconBg}
+                iconMaskSrc={experience.iconMaskSrc}
                 style={{
                   animationDelay: `${index * 0.15}s`
                 }}
