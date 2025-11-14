@@ -1,9 +1,8 @@
 import styled from 'styled-components';
-import { Typography, Container, TechIcon, JavaScriptIcon, ReactIcon, VueIcon, TailwindIcon, BootstrapIcon, SassIcon, DatabaseIcon, FlutterIcon } from '../../atoms';
+import { Container, Divider, TechIcon, HtmlIcon, CssIcon, JavaScriptIcon, TypeScriptIcon, NodeJsIcon, TailwindIcon, BootstrapIcon, SassIcon, DatabaseIcon, ReactIcon, FlutterIcon, VueIcon, SwaggerIcon, VscodeIcon, DockerIcon, GitIcon } from '../../atoms';
 
 const TechSectionWrapper = styled.section`
-  padding: 80px 0;
-  background: linear-gradient(180deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%);
+  background: #000000;
   position: relative;
   overflow: hidden;
   
@@ -29,24 +28,37 @@ const TechContent = styled.div`
   text-align: center;
 `;
 
-const TechGrid = styled.div`
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-  gap: 24px;
+const CarouselViewport = styled.div`
+  overflow: hidden;
+  width: 100vw;
   margin-top: 48px;
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
-  
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+`;
+
+const CarouselTrack = styled.div`
+  display: inline-flex;
+  align-items: center;
+  gap: 48px;
+  white-space: nowrap;
+  will-change: transform;
+  animation: scroll 24s linear infinite;
+
+
+  @keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
   @media (max-width: 768px) {
-    grid-template-columns: repeat(4, 1fr);
-    gap: 16px;
-    margin-top: 32px;
+    gap: 32px;
+    animation-duration: 30s;
   }
   
   @media (max-width: 480px) {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 12px;
+    gap: 24px;
+    animation-duration: 35s;
   }
 `;
 
@@ -59,6 +71,8 @@ const TechItemWrapper = styled.div`
   @media (max-width: 768px) {
     gap: 8px;
   }
+  
+  padding: 20px 0 40px 0;
 `;
 
 const TechLabel = styled.div`
@@ -107,48 +121,43 @@ const FloatingShape = styled.div`
 `;
 
 const technologies = [
-  { icon: JavaScriptIcon, name: 'JavaScript', color: '#F7DF1E' },
-  { icon: ReactIcon, name: 'React', color: '#61DAFB' },
-  { icon: VueIcon, name: 'Vue.js', color: '#4FC08D' },
-  { icon: TailwindIcon, name: 'Tailwind', color: '#06B6D4' },
-  { icon: BootstrapIcon, name: 'Bootstrap', color: '#7952B3' },
-  { icon: SassIcon, name: 'Sass', color: '#CC6699' },
-  { icon: DatabaseIcon, name: 'Database', color: '#336791' },
-  { icon: FlutterIcon, name: 'Flutter', color: '#02569B' }
+  { icon: HtmlIcon, name: 'HTML' },
+  { icon: CssIcon, name: 'CSS' },
+  { icon: JavaScriptIcon, name: 'JavaScript' },
+  { icon: TypeScriptIcon, name: 'TypeScript' },
+  { icon: NodeJsIcon, name: 'Node.js' },
+  { icon: TailwindIcon, name: 'Tailwind' },
+  { icon: BootstrapIcon, name: 'Bootstrap' },
+  { icon: SassIcon, name: 'Sass' },
+  { icon: DatabaseIcon, name: 'Database' },
+  { icon: ReactIcon, name: 'React' },
+  { icon: FlutterIcon, name: 'Flutter' },
+  { icon: VueIcon, name: 'Vue.js' },
+  { icon: SwaggerIcon, name: 'Swagger' },
+  { icon: VscodeIcon, name: 'VS Code' },
+  { icon: DockerIcon, name: 'Docker' },
+  { icon: GitIcon, name: 'Git' }
 ];
+
+const doubledTechnologies = [...technologies, ...technologies];
 
 const Techs = () => {
   return (
     <TechSectionWrapper>
-      <Container>
+      <Divider direction='left'/>
+      <Container padding="0">
         <TechContent>
-          <Typography 
-            variant="h2" 
-            color="#ffffff" 
-            align="center"
-            margin="0 0 16px 0"
-          >
-            Tecnologías que domino
-          </Typography>
-          
-          <Typography 
-            variant="subtitle" 
-            color="#cccccc" 
-            align="center"
-            margin="0 auto"
-            style={{ maxWidth: '600px' }}
-          >
-            Herramientas y frameworks que utilizo para crear experiencias web excepcionales
-          </Typography>
-          
-          <TechGrid>
-            {technologies.map((tech, index) => {
-              const IconComponent = tech.icon;
-              return (
-                <TechItemWrapper key={tech.name}>
+          <CarouselViewport>
+            <CarouselTrack>
+              {doubledTechnologies.map((tech, index) => {
+                const IconComponent = tech.icon;
+                return (
+                <TechItemWrapper key={`${tech.name}-${index}`}>
                   <TechIcon 
-                    size="80px" 
-                    mobileSize="60px"
+                    size="100px" 
+                    mobileSize="80px"
+                    iconSize="80px"
+                    mobileIconSize="60px"
                     style={{
                       animationDelay: `${index * 0.1}s`
                     }}
@@ -157,35 +166,34 @@ const Techs = () => {
                   </TechIcon>
                   <TechLabel>{tech.name}</TechLabel>
                 </TechItemWrapper>
-              );
-            })}
-          </TechGrid>
+                );
+              })}
+            </CarouselTrack>
+          </CarouselViewport>
         </TechContent>
       </Container>
-      
-      {/* Floating Shapes */}
-      <FloatingShape 
-        top="10%" 
-        left="5%" 
+      <FloatingShape
+        top="10%"
+        left="5%"
         size="120px"
         mobileSize="80px"
         rounded
         delay="0s"
         bg="rgba(0, 255, 136, 0.05)"
       />
-      
-      <FloatingShape 
-        bottom="15%" 
-        right="8%" 
+
+      <FloatingShape
+        bottom="15%"
+        right="8%"
         size="80px"
         mobileSize="50px"
         delay="2s"
         bg="rgba(0, 255, 136, 0.08)"
       />
-      
-      <FloatingShape 
-        top="60%" 
-        left="10%" 
+
+      <FloatingShape
+        top="60%"
+        left="10%"
         size="60px"
         mobileSize="40px"
         rounded

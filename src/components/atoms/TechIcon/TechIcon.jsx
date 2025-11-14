@@ -3,8 +3,7 @@ import styled from 'styled-components';
 const IconContainer = styled.div`
   width: ${props => props.size || '80px'};
   height: ${props => props.size || '80px'};
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: none;
   border-radius: 16px;
   display: flex;
   align-items: center;
@@ -15,37 +14,26 @@ const IconContainer = styled.div`
   position: relative;
   overflow: hidden;
   
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(0, 255, 136, 0.2), transparent);
-    transition: left 0.5s ease;
-  }
-  
   &:hover {
     transform: translateY(-8px);
-    border-color: #00ff88;
-    box-shadow: 0 8px 25px rgba(0, 255, 136, 0.3);
-    background: rgba(0, 255, 136, 0.1);
-    
-    &::before {
-      left: 100%;
-    }
     
     svg {
       transform: scale(1.1);
+      filter: drop-shadow(0 0 12px rgba(0, 255, 136, 0.6)) brightness(1.05) saturate(1.15);
+      fill: #00ff88;
+      stroke: #00ff88;
+      color: #00ff88;
     }
   }
   
   svg {
     width: ${props => props.iconSize || '40px'};
     height: ${props => props.iconSize || '40px'};
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, filter 0.3s ease, fill 0.3s ease, stroke 0.3s ease, color 0.3s ease;
     filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+    fill: #ffffff;
+    stroke: #ffffff;
+    color: #ffffff;
   }
   
   @media (max-width: 768px) {
