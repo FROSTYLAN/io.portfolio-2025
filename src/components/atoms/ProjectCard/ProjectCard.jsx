@@ -1,39 +1,29 @@
 import styled from 'styled-components';
 import { Typography, Button } from '../index';
+import exampleImg from './example-img.png';
 
 const ProjectCardWrapper = styled.div`
-  background: rgba(26, 26, 26, 0.8);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 16px;
+  border-radius: 34.255px;
+border: 1.427px solid rgba(255, 255, 255, 0.10);
+background: radial-gradient(74.78% 74.78% at 50.11% 0%, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.00) 100%);
   overflow: hidden;
-  transition: all 0.3s ease;
+
   position: relative;
   height: 100%;
   display: flex;
   flex-direction: column;
-  backdrop-filter: blur(10px);
-  
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 3px;
-    background: linear-gradient(90deg, #00ff88, #00cc6a);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-  }
-  
+  gap: 24px;
+  padding: 32px;
+  backdrop-filter: blur(14px);
+  transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease, background 220ms ease, backdrop-filter 220ms ease;
+  will-change: transform;
+
   &:hover {
-    transform: translateY(-8px);
-    border-color: rgba(0, 255, 136, 0.3);
-    box-shadow: 0 20px 40px rgba(0, 255, 136, 0.1);
-    background: rgba(26, 26, 26, 0.95);
-    
-    &::before {
-      opacity: 1;
-    }
+    transform: translateY(-2px) scale(1.01);
+    box-shadow: 0 10px 24px rgba(0, 255, 136, 0.06), 0 4px 12px rgba(0, 0, 0, 0.18);
+    border-color: rgba(255, 255, 255, 0.14);
+    background: radial-gradient(74.78% 74.78% at 50.11% 0%, rgba(255, 255, 255, 0.16) 0%, rgba(255, 255, 255, 0.00) 100%);
+    backdrop-filter: blur(15px);
   }
   
   @media (max-width: 768px) {
@@ -43,41 +33,25 @@ const ProjectCardWrapper = styled.div`
   }
 `;
 
-const ProjectImage = styled.div`
+const ProjectImage = styled.img`
+  margin: 0;
   width: 100%;
-  height: 240px;
-  background: ${props => props.bg || '#f5f5f5'};
-  background-image: url(${props => props.src});
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  position: relative;
-  overflow: hidden;
-  
-  &::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 60px;
-    background: linear-gradient(transparent, rgba(26, 26, 26, 0.8));
-  }
-  
-  @media (max-width: 768px) {
-    height: 200px;
-  }
+  height: auto;
+  max-height: 400px;
+  object-fit: contain;
+  object-position: center;
+  display: block;
 `;
 
 const ProjectContent = styled.div`
-  padding: 24px;
+  padding: 0;
   flex: 1;
   display: flex;
   flex-direction: column;
   gap: 16px;
   
   @media (max-width: 768px) {
-    padding: 20px;
+    padding: 0;
     gap: 12px;
   }
 `;
@@ -90,7 +64,7 @@ const ProjectHeader = styled.div`
 
 const ProjectDescription = styled.div`
   flex: 1;
-  margin: 8px 0;
+  margin: 0;
 `;
 
 const ProjectFooter = styled.div`
@@ -98,7 +72,7 @@ const ProjectFooter = styled.div`
   align-items: center;
   justify-content: space-between;
   margin-top: auto;
-  padding-top: 16px;
+  padding-top: 0;
   
   @media (max-width: 768px) {
     flex-direction: column;
@@ -136,13 +110,62 @@ const TechIcon = styled.div`
 `;
 
 const DemoButton = styled(Button)`
-  padding: 8px 16px;
-  font-size: 14px;
-  min-width: 120px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: #B9FF66;
+  background: transparent;
+  border: none;
+  min-width: 0;
+  cursor: pointer;
+  text-decoration: none;
+  transition: text-decoration 160ms ease;
+
+  svg {
+    transition: none;
+  }
+
+  svg path {
+    fill: #B9FF66;
+    transition: none;
+  }
+
+  &:hover,
+  &:focus-visible {
+    color: #B9FF66;
+    background: transparent;
+    border-color: transparent;
+    box-shadow: none;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-thickness: 2px;
+  }
+
+  &:hover svg {
+    transform: none;
+  }
+
+  &:hover svg path,
+  &:focus-visible svg path {
+    fill: #B9FF66;
+  }
+
+  &:active {
+    color: #B9FF66;
+    background: transparent;
+    box-shadow: none;
+  }
+
+  &:active svg path {
+    fill: #B9FF66;
+  }
   
   @media (max-width: 768px) {
-    width: 100%;
-    justify-content: center;
+    width: auto;
+    justify-content: flex-start;
   }
 `;
 
@@ -165,7 +188,7 @@ const ProjectCard = ({
 
   return (
     <ProjectCardWrapper {...props}>
-      <ProjectImage src={image} />
+      <ProjectImage src={exampleImg} alt={title || 'Proyecto'} />
       
       <ProjectContent>
         <ProjectHeader>
@@ -174,7 +197,8 @@ const ProjectCard = ({
             color="#ffffff"
             style={{ 
               fontSize: 'clamp(1.125rem, 2.5vw, 1.375rem)',
-              fontWeight: '600'
+              fontWeight: '600',
+              letterSpacing: '0.02em'
             }}
           >
             {title}
@@ -187,7 +211,8 @@ const ProjectCard = ({
             color="#cccccc"
             style={{ 
               lineHeight: '1.6',
-              fontSize: 'clamp(0.875rem, 2vw, 0.95rem)'
+              fontSize: 'clamp(0.875rem, 2vw, 0.95rem)',
+              letterSpacing: '0.01em'
             }}
           >
             {description}
@@ -203,11 +228,11 @@ const ProjectCard = ({
             ))}
           </TechIcons>
           
-          <DemoButton 
-            variant="outline"
-            onClick={handleDemoClick}
-          >
-            Ver Demo →
+          <DemoButton onClick={handleDemoClick}>
+            Ver Demo
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+              <path d="M0.311157 11.9973C-0.103731 12.4122 -0.103731 13.0849 0.311157 13.4998C0.726045 13.9146 1.39871 13.9146 1.8136 13.4998L1.06238 12.7485L0.311157 11.9973ZM13.811 1.06228C13.811 0.475543 13.3354 -0.00010317 12.7486 -0.000102706H3.18715C2.60041 -0.000103043 2.12476 0.475544 2.12476 1.06228C2.12476 1.64902 2.60041 2.12467 3.18715 2.12467H11.6862V10.6238C11.6862 11.2105 12.1619 11.6861 12.7486 11.6861C13.3354 11.6861 13.811 11.2105 13.811 10.6238V1.06228ZM1.06238 12.7485L1.8136 13.4998L13.4998 1.8135L12.7486 1.06228L11.9974 0.311063L0.311157 11.9973L1.06238 12.7485Z" fill="#B9FF66"/>
+            </svg>
           </DemoButton>
         </ProjectFooter>
       </ProjectContent>

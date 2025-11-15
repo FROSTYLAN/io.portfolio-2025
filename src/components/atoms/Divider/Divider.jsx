@@ -5,7 +5,6 @@ const Line = styled.div`
   height: 4px;
   background: ${({ direction }) =>
     `linear-gradient(${direction === 'left' ? '270deg' : '90deg'}, #B9FF66 30.19%, #000000 92.08%)`};
-  box-shadow: 0 0 12px rgba(0, 255, 136, 0.35);
   border-radius: 2px;
 `;
 

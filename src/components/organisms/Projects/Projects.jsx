@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 import { Typography, Container, ProjectCard } from '../../atoms';
+import background from './background.png';
 
 const ProjectsSectionWrapper = styled.section`
   padding: 80px 0;
-  background: linear-gradient(180deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%);
   position: relative;
   overflow: hidden;
   
@@ -27,6 +27,31 @@ const ProjectsSectionWrapper = styled.section`
 const ProjectsContent = styled.div`
   position: relative;
   z-index: 2;
+`;
+
+const CenterBackground = styled.div`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 140%;
+  height: 140%;
+  background-image: url(${background});
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  opacity: 1;
+  filter: blur(0.6px);
+  z-index: 1;
+
+  @media (max-width: 968px) {
+    width: 520px;
+    height: 520px;
+  }
+  @media (max-width: 768px) {
+    width: 360px;
+    height: 360px;
+  }
 `;
 
 const SectionHeader = styled.div`
@@ -146,6 +171,7 @@ const projectsData = [
 const Projects = () => {
   return (
     <ProjectsSectionWrapper>
+      <CenterBackground />
       <Container>
         <ProjectsContent>
           <SectionHeader>
