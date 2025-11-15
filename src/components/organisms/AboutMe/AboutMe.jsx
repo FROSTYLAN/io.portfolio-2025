@@ -1,9 +1,9 @@
 import styled from 'styled-components';
-import { Typography, Container } from '../../atoms';
+import { Typography, Container, Divider } from '../../atoms';
 
 const AboutSectionWrapper = styled.section`
-  padding: 80px 0;
-  background: linear-gradient(180deg, #1a1a1a 0%, #0a0a0a 50%, #1a1a1a 100%);
+  padding: 80px 0;  background: transparent;
+
   position: relative;
   overflow: hidden;
   
@@ -139,6 +139,7 @@ const aboutData = [
 
 const AboutMe = () => {
   return (
+    <>
     <AboutSectionWrapper>
       <Container>
         <AboutContent>
@@ -213,6 +214,8 @@ const AboutMe = () => {
         bg="rgba(0, 255, 136, 0.03)"
       />
     </AboutSectionWrapper>
+    <Divider direction='right' />
+    </>
   );
 };
 
