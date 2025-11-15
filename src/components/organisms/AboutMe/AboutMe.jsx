@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Typography, Container, Card } from '../../atoms';
+import { Typography, Container } from '../../atoms';
 
 const AboutSectionWrapper = styled.section`
   padding: 80px 0;
@@ -54,16 +54,46 @@ const SectionIcon = styled.div`
   }
 `;
 
-const CardsGrid = styled.div`
+const Panel = styled.div`
+  border-radius: 24px;
+  border: 1px solid #3C4434;
+  background: linear-gradient(103deg, #0F1408 16.66%, rgba(23, 32, 9, 0.27) 81.61%);
+  backdrop-filter: blur(8px);
+  padding: 32px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+`;
+
+const ColumnsGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 32px;
+  gap: 0;
   
   @media (max-width: 968px) {
     grid-template-columns: 1fr;
-    gap: 24px;
-    max-width: 600px;
-    margin: 0 auto;
+  }
+`;
+
+const ColumnItem = styled.div`
+  padding: 0 28px;
+  position: relative;
+  
+  &:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 1px;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(255,255,255,0.25), rgba(255,255,255,0.08));
+    opacity: 0.6;
+  }
+  
+  @media (max-width: 968px) {
+    padding: 0;
+    
+    &:not(:last-child)::after {
+      display: none;
+    }
   }
 `;
 
@@ -122,43 +152,34 @@ const AboutMe = () => {
             </Typography>
           </SectionHeader>
           
-          <CardsGrid>
-            {aboutData.map((item, index) => (
-              <Card
-                key={item.title}
-                showIcon={true}
-                iconColor="#00ff88"
-                iconSize="12px"
-                mobileIconSize="10px"
-                title={
+          <Panel>
+            <ColumnsGrid>
+              {aboutData.map((item) => (
+                <ColumnItem key={item.title}>
                   <Typography 
                     variant="h3" 
-                    color="#ffffff"
-                    style={{ fontSize: 'clamp(1.125rem, 2.5vw, 1.5rem)' }}
+                    color="#b9ff66"
+                    style={{ 
+                      fontSize: 'clamp(1.125rem, 2.5vw, 1.5rem)',
+                      fontWeight: 600
+                    }}
                   >
                     {item.title}
                   </Typography>
-                }
-                headerMarginBottom="20px"
-                mobileHeaderMarginBottom="16px"
-                height="auto"
-                style={{
-                  animationDelay: `${index * 0.2}s`
-                }}
-              >
-                <Typography 
-                  variant="body" 
-                  color="#cccccc"
-                  style={{ 
-                    lineHeight: '1.7',
-                    fontSize: 'clamp(0.875rem, 2vw, 1rem)'
-                  }}
-                >
-                  {item.content}
-                </Typography>
-              </Card>
-            ))}
-          </CardsGrid>
+                  <Typography 
+                    variant="body" 
+                    color="#cfd2cc"
+                    style={{ 
+                      lineHeight: '1.7',
+                      fontSize: 'clamp(0.9rem, 2vw, 1rem)'
+                    }}
+                  >
+                    {item.content}
+                  </Typography>
+                </ColumnItem>
+              ))}
+            </ColumnsGrid>
+          </Panel>
         </AboutContent>
       </Container>
       
