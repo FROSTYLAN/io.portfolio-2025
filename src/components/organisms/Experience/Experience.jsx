@@ -1,27 +1,15 @@
 import styled from 'styled-components';
-import { Typography, Container, ExperienceCard } from '../../atoms';
+import { Typography, Container, ExperienceCard, Divider } from '../../atoms';
 import frontendIcon from './frontend-icon.svg';
 import fullstackIcon from './fullstack-icon.svg';
 import freelanceIcon from './freelance-icon.svg';
 import leaderIcon from './leader-icon.svg';
 
 const ExperienceSectionWrapper = styled.section`
-  padding: 80px 0;
-  background: linear-gradient(180deg, #1a1a1a 0%, #0a0a0a 50%, #1a1a1a 100%);
+  padding: 0  0 80px 0;
+  background: transparent;
   position: relative;
-  overflow: hidden;
-  
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: radial-gradient(circle at 25% 25%, rgba(0, 255, 136, 0.04) 0%, transparent 50%),
-                radial-gradient(circle at 75% 75%, rgba(0, 255, 136, 0.06) 0%, transparent 50%);
-    pointer-events: none;
-  }
+  overflow: visible;
   
   @media (max-width: 768px) {
     padding: 60px 0;
@@ -29,6 +17,7 @@ const ExperienceSectionWrapper = styled.section`
 `;
 
 const ExperienceContent = styled.div`
+  padding-top: 80px;
   position: relative;
   z-index: 2;
 `;
@@ -151,6 +140,7 @@ const experienceData = [
 const Experience = () => {
   return (
     <ExperienceSectionWrapper>
+      <Divider direction='left' />
       <Container>
         <ExperienceContent>
           <SectionHeader>

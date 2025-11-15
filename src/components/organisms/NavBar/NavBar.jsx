@@ -8,14 +8,16 @@ const NavBarWrapper = styled.nav`
   left: 0;
   right: 0;
   z-index: 1000;
-  background: ${props => props.scrolled ? 'rgba(10, 10, 10, 0.95)' : 'transparent'};
-  backdrop-filter: ${props => props.scrolled ? 'blur(10px)' : 'none'};
-  border-bottom: ${props => props.scrolled ? '1px solid rgba(255, 255, 255, 0.1)' : 'none'};
+  background: ${props => props.scrolled ? 'rgba(20, 20, 20, 0.35)' : 'transparent'};
+  backdrop-filter: ${props => props.scrolled ? 'saturate(150%) blur(12px)' : 'none'};
+  -webkit-backdrop-filter: ${props => props.scrolled ? 'saturate(150%) blur(12px)' : 'none'};
+  border-bottom: ${props => props.scrolled ? '1px solid rgba(255, 255, 255, 0.12)' : 'none'};
+  box-shadow: ${props => props.scrolled ? '0 6px 20px rgba(0,0,0,0.15)' : 'none'};
   transition: all 0.3s ease;
-  padding: ${props => props.scrolled ? '12px 0' : '20px 0'};
+  padding: ${props => props.scrolled ? '10px 0' : '18px 0'};
   
   @media (max-width: 768px) {
-    padding: ${props => props.scrolled ? '10px 0' : '16px 0'};
+    padding: ${props => props.scrolled ? '8px 0' : '14px 0'};
   }
 `;
 
@@ -127,6 +129,15 @@ const NavBar = () => {
     const handleScrollActive = () => {
       const sections = navItems.map(item => document.getElementById(item.id));
       const scrollPosition = window.scrollY + 100;
+
+      // Activar 'Contacto' cuando se llega al final de la página
+      const totalScrollHeight = Math.max(document.documentElement.scrollHeight, document.body.scrollHeight);
+      const nearBottomOffset = 20; // activar un poco antes de llegar al fondo
+      const atBottom = window.innerHeight + window.scrollY >= totalScrollHeight - nearBottomOffset;
+      if (atBottom) {
+        setActiveSection('contacto');
+        return;
+      }
 
       sections.forEach((section, index) => {
         if (section) {
