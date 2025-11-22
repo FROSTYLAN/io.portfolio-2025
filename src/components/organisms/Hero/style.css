@@ -1,6 +1,7 @@
 .hero {
     width: 100%;
     height: 100vh;
+    max-height: 1020px;
     background-color: #000;
     position: relative;
 }
@@ -45,6 +46,32 @@
     pointer-events: none;
 }
 
+@media (max-width: 1080px) {
+    .hero__atom {
+        bottom: -120px;
+        right: -120px;
+        scale: 0.8;
+    }
+
+    .hero__charles {
+        bottom: -120px;
+        right: -100px;
+        scale: 0.7;
+    }
+
+    .hero__in-icon {
+        bottom: 400px;
+        right: 60px;
+        scale: 0.75;
+    }
+
+    .hero__gh-icon {
+        bottom: 80px;
+        right: 540px;
+        scale: 0.75;
+    }
+}
+
 .hero__atom-2 {
     position: absolute;
     bottom: -200px;
@@ -70,10 +97,100 @@
     pointer-events: none;
 }
 
+/* Ocultar átomos en pantallas pequeñas */
+@media (max-width: 768px) {
+    .hero__atom-3 {
+        display: none;
+    }
+
+    .hero__atom {
+        bottom: -200px;
+        right: -200px;
+        rotate: 25deg;
+        scale: 1;
+    }
+
+    .hero__charles {
+        bottom: -120px;
+        transform: translateX(-0%);
+        scale: 0.7;
+    }
+
+    .hero__in-icon {
+        bottom: 280px;
+        right: 20px;
+        scale: 0.75;
+    }
+
+    .hero__gh-icon {
+        bottom: 44px;
+        right: 480px;
+        scale: 0.75;
+    }
+}
+
+@media (max-width: 600px) {
+    .hero__atom-3 {
+        display: none;
+    }
+
+    .hero__atom {
+        display: none;
+    }
+
+    .hero__charles {
+        bottom: -190px;
+        right: -180px;
+        scale: 0.5;
+    }
+
+    .hero__in-icon {
+        bottom: 200px;
+        left: 40px;
+        scale: 0.75;
+    }
+
+    .hero__gh-icon {
+        bottom: 120px;
+        left: 20px;
+        scale: 0.75;
+    }
+}
+
+@media (max-width: 470px) {
+    .hero__charles {
+        bottom: -190px;
+        left: -180px;
+        scale: 0.5;
+    }
+
+    .hero__in-icon {
+        position: absolute;
+        bottom: 270px;
+        right: -800px;
+        scale: 0.6;
+    }
+
+    .hero__gh-icon {
+        bottom: 200px;
+        left: 12px;
+        scale: 0.6;
+    }
+}
+
+
+@media (max-width: 870px) {
+    .hero__atom-2 {
+        display: none;
+    }
+}
+
+
 /* Temblor al hover, usando :has para no interrumpir eventos del img */
 .hero__atom-2:has(img:hover) {
     animation: atom-float-sway 9s ease-in-out 0s infinite, atom-shake-hover 0.6s cubic-bezier(0.36, 0.07, 0.19, 0.97) 0s 1 both;
 }
+
 .hero__atom-3:has(img:hover) {
     animation: atom-float-sway 11s ease-in-out 1.2s infinite, atom-shake-hover 0.6s cubic-bezier(0.36, 0.07, 0.19, 0.97) 0s 1 both;
 }
@@ -87,8 +204,14 @@
     pointer-events: auto;
 }
 
-.hero__atom-2 img { animation-duration: 36s; }
-.hero__atom-3 img { animation-duration: 44s; animation-direction: reverse; }
+.hero__atom-2 img {
+    animation-duration: 36s;
+}
+
+.hero__atom-3 img {
+    animation-duration: 44s;
+    animation-direction: reverse;
+}
 
 /* Hover: solo brillo/glow sutil en los átomos */
 .hero__atom-2 img:hover,
@@ -103,16 +226,37 @@
 
     width: 100%;
     height: 100%;
-    padding: 100px;
+    padding-top: 100px;
+    padding-right: clamp(12px, 4vw, 80px);
+    padding-bottom: clamp(12px, 4vw, 80px);
+    padding-left: clamp(12px, 4vw, 80px);
 
     transform: translate(-50%, -50%);
     z-index: 1;
 }
 
+@media (max-width: 768px) {
+    .hero__content {
+        padding-top: 100px;
+        padding-right: clamp(16px, 4.5vw, 60px);
+        padding-bottom: clamp(16px, 4.5vw, 60px);
+        padding-left: clamp(16px, 4.5vw, 60px);
+    }
+}
+
+@media (max-width: 480px) {
+    .hero__content {
+        padding-top: 100px;
+        padding-right: clamp(10px, 3.5vw, 24px);
+        padding-bottom: clamp(10px, 3.5vw, 24px);
+        padding-left: clamp(10px, 3.5vw, 24px);
+    }
+}
+
 .hero__content--greeting {
     color: #F7FFEE;
     font-family: Inter;
-    font-size: 32px;
+    font-size: clamp(18px, 2.4vw, 32px);
     font-style: normal;
     font-weight: 500;
     line-height: normal;
@@ -125,15 +269,15 @@
 
 .hero__content--title {
     font-family: "Tilt Neon";
-    font-size: 96px;
-    margin: 8px 0 12px;
+    font-size: clamp(36px, 6vw, 96px);
+    margin: clamp(6px, 1.2vw, 12px) 0 clamp(8px, 1.6vw, 16px);
 }
 
 .hero__content--description {
     font-family: "Inter", sans-serif;
-    font-size: 20px;
+    font-size: clamp(14px, 1.6vw, 20px);
     line-height: 1.6;
-    max-width: 700px;
+    max-width: min(700px, 92vw);
     color: #e6e6e6;
     text-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
 }
@@ -141,12 +285,12 @@
 .hero__content--button-container {
     display: flex;
     justify-content: flex-start;
-
-    padding: 40px 0;
+    padding: clamp(16px, 4vw, 40px) 0;
 
     display: flex;
     align-items: center;
-    gap: 18px;
+    gap: clamp(12px, 2.2vw, 18px);
+    flex-wrap: wrap;
 
     color: #FFF;
     text-align: center;
@@ -160,7 +304,7 @@
 
 .hero__content--button--primary {
     display: flex;
-    padding: 12px 30px;
+    padding: clamp(10px, 1.2vw, 14px) clamp(20px, 2.2vw, 30px);
     justify-content: center;
     align-items: center;
     border-radius: 12px;
@@ -185,7 +329,7 @@
 
 .hero__content--button--secondary {
     display: flex;
-    padding: 12px 30px;
+    padding: clamp(10px, 1.2vw, 14px) clamp(20px, 2.2vw, 30px);
     justify-content: center;
     align-items: center;
     border-radius: 12px;
@@ -212,17 +356,17 @@
 .hero__content--stats-container {
     display: inline-flex;
     align-items: center;
-    gap: 16px;
-    max-width: 580px;
+    gap: clamp(12px, 2vw, 16px);
+    max-width: min(580px, 92vw);
 }
 
 .hero__content--stats {
     display: flex;
-    padding: 16px 40px;
+    padding: clamp(12px, 2.2vw, 16px) clamp(24px, 3.5vw, 40px);
     align-items: center;
     gap: 9.89px;
 
-    border-radius: 36px;
+    border-radius: clamp(16px, 4vw, 36px);
     border: 1px solid rgba(255, 255, 255, 0.30);
     background: rgba(255, 255, 255, 0.08);
     position: relative;
@@ -233,7 +377,7 @@
 .hero__content--stats--number {
     color: #BFC1BC;
     font-family: Inter;
-    font-size: 74.176px;
+    font-size: clamp(36px, 6vw, 74.176px);
     font-style: normal;
     font-weight: 600;
     line-height: normal;
@@ -242,7 +386,7 @@
 .hero__content--stats--description {
     color: #BFC1BC;
     font-family: Inter;
-    font-size: 19.78px;
+    font-size: clamp(12px, 2vw, 19.78px);
     font-style: normal;
     font-weight: 600;
     line-height: normal;
@@ -271,35 +415,77 @@
 
 /* Keyframes: gentle float + slight sway */
 @keyframes icon-float-sway {
-    0%   { transform: translateY(0) rotate(0deg); }
-    50%  { transform: translateY(-8px) rotate(-1deg); }
-    100% { transform: translateY(0) rotate(0deg); }
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-8px) rotate(-1deg);
+    }
+
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
 }
 
 @keyframes atom-float-sway {
-    0%   { transform: translateY(0) scale(0.5) rotate(0deg); }
-    50%  { transform: translateY(-16px) scale(0.5) rotate(2deg); }
-    100% { transform: translateY(0) scale(0.5) rotate(0deg); }
+    0% {
+        transform: translateY(0) scale(0.5) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-16px) scale(0.5) rotate(2deg);
+    }
+
+    100% {
+        transform: translateY(0) scale(0.5) rotate(0deg);
+    }
 }
 
 @keyframes atom-slow-spin {
-    0%   { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 /* Temblor rápido y sutil para hover del contenedor del átomo */
 @keyframes atom-shake-hover {
-    0%   { transform: translate(0, 0) scale(0.5) rotate(0deg); }
-    15%  { transform: translate(1px, -1px) scale(0.5) rotate(-0.8deg); }
-    30%  { transform: translate(-1px, 1px) scale(0.5) rotate(0.9deg); }
-    45%  { transform: translate(1px, 0px) scale(0.5) rotate(0.6deg); }
-    60%  { transform: translate(-1px, 0px) scale(0.5) rotate(-0.7deg); }
-    75%  { transform: translate(0px, 1px) scale(0.5) rotate(0.5deg); }
-    100% { transform: translate(0, 0) scale(0.5) rotate(0deg); }
+    0% {
+        transform: translate(0, 0) scale(0.5) rotate(0deg);
+    }
+
+    15% {
+        transform: translate(1px, -1px) scale(0.5) rotate(-0.8deg);
+    }
+
+    30% {
+        transform: translate(-1px, 1px) scale(0.5) rotate(0.9deg);
+    }
+
+    45% {
+        transform: translate(1px, 0px) scale(0.5) rotate(0.6deg);
+    }
+
+    60% {
+        transform: translate(-1px, 0px) scale(0.5) rotate(-0.7deg);
+    }
+
+    75% {
+        transform: translate(0px, 1px) scale(0.5) rotate(0.5deg);
+    }
+
+    100% {
+        transform: translate(0, 0) scale(0.5) rotate(0deg);
+    }
 }
 
 /* Respeto accesibilidad: reduce motion */
 @media (prefers-reduced-motion: reduce) {
+
     .hero__atom-2,
     .hero__atom-3,
     .hero__in-icon,
@@ -307,6 +493,7 @@
         animation: none !important;
         transform: none;
     }
+
     .hero__atom-2 img,
     .hero__atom-3 img {
         animation: none !important;
