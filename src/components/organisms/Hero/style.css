@@ -1,6 +1,7 @@
 .hero {
     width: 100%;
     height: 100vh;
+    min-height: 750px;
     max-height: 1020px;
     background-color: #000;
     position: relative;
@@ -78,6 +79,8 @@
     left: -220px;
     will-change: transform;
     animation: atom-float-sway 9s ease-in-out infinite;
+    animation-fill-mode: both;
+    transform: translateY(0) scale(0.5) rotate(0deg);
     z-index: 2;
     pointer-events: none;
 }
@@ -93,6 +96,8 @@
     will-change: transform;
     animation: atom-float-sway 11s ease-in-out infinite;
     animation-delay: 1.2s;
+    animation-fill-mode: both;
+    transform: translateY(0) scale(0.5) rotate(0deg);
     z-index: 2;
     pointer-events: none;
 }

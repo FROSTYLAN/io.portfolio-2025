@@ -30,14 +30,13 @@ const SectionHeader = styled.div`
   
   @media (max-width: 768px) {
     margin-bottom: 32px;
-    justify-content: center;
   }
 `;
 
 const SectionIcon = styled.div`
-  width: 16px;
-  height: 16px;
-  background: #00ff88;
+  width: 40px;
+  height: 40px;
+  background: rgba(185, 255, 102, 1);
   border-radius: 50%;
   flex-shrink: 0;
   
@@ -148,6 +147,7 @@ const Experience = () => {
             <Typography 
               variant="h2" 
               color="#ffffff"
+              style={{ fontFamily: "'Tilt Neon', sans-serif" }}
             >
               Mi experiencia laboral
             </Typography>

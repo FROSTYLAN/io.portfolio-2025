@@ -1,14 +1,17 @@
 import styled from 'styled-components';
 
 const StyledMobileMenuButton = styled.button`
-  display: none;
+  display: block;
   background: none;
   border: none;
   color: #ffffff;
   font-size: 24px;
   cursor: pointer;
   padding: 8px;
-  z-index: 1001;
+  z-index: 10000;
+  position: fixed;
+  top: 20px;
+  right: 20px;
   transition: color 0.3s ease, transform 0.3s ease;
   
   &:hover {
@@ -20,8 +23,8 @@ const StyledMobileMenuButton = styled.button`
     transform: scale(0.95);
   }
   
-  @media (max-width: 768px) {
-    display: block;
+  @media (min-width: 769px) {
+    display: none;
   }
 `;
 

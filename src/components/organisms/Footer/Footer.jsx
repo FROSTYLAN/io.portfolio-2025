@@ -236,7 +236,9 @@ const Footer = () => {
                   fontFamily: '"Tilt Neon"'
                 }}
               >
-                ¿Estás <span style={{ color: '#00ff88' }}>listo</span> para llevar tu
+                ¿Estás <span style={{
+                  color: 'rgba(185, 255, 102, 1)'
+                }}>listo</span> para llevar tu
               </Typography>
               <Typography
                 variant="h2"
@@ -249,7 +251,9 @@ const Footer = () => {
                   fontFamily: '"Tilt Neon"'
                 }}
               >
-                desarrollo al siguiente <span style={{ color: '#00ff88' }}>nivel</span>?
+                desarrollo al siguiente <span style={{
+                  color: 'rgba(185, 255, 102, 1)'
+                }}>nivel</span>?
               </Typography>
             </MainHeading>
 

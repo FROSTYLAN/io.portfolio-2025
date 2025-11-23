@@ -16,10 +16,6 @@ const TechSectionWrapper = styled.section`
     background: radial-gradient(circle at 50% 50%, rgba(0, 255, 136, 0.05) 0%, transparent 70%);
     pointer-events: none;
   }
-  
-  @media (max-width: 768px) {
-    padding: 60px 0;
-  }
 `;
 
 const TechContent = styled.div`
