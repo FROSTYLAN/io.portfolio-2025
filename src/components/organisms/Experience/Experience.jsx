@@ -104,7 +104,7 @@ const LeaderIcon = () => (
 const experienceData = [
   {
     id: 1,
-    title: "Lead Frontend Developer",
+    title: "Full Stack Developer - Cadmus Tech",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tem.",
     icon: <FrontendIcon />,
     iconMaskSrc: frontendIcon,
@@ -112,7 +112,7 @@ const experienceData = [
   },
   {
     id: 2,
-    title: "Full Stack Developer",
+    title: "Frontend Developer - Wost Solutions",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tem.",
     icon: <FullStackIcon />,
     iconMaskSrc: fullstackIcon,
@@ -120,7 +120,7 @@ const experienceData = [
   },
   {
     id: 3,
-    title: "Freelance Developer",
+    title: "Software Enginner - Marea Picante",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tem.",
     icon: <FreelanceIcon />,
     iconMaskSrc: freelanceIcon,
@@ -128,7 +128,7 @@ const experienceData = [
   },
   {
     id: 4,
-    title: "Head of Development Area",
+    title: "Freelance Developer - Dacax",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tem.",
     icon: <LeaderIcon />,
     iconMaskSrc: leaderIcon,
