@@ -120,13 +120,13 @@ const FloatingShape = styled.div`
 const projectsData = [
   {
     id: 1,
-    title: "AuditAI - Sistema de Auditoría",
+    title: "Digenio - Sistema de Gestión",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.",
-    image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='240' viewBox='0 0 400 240'%3E%3Crect width='400' height='240' fill='%23f8f9fa'/%3E%3Ctext x='200' y='120' text-anchor='middle' dy='.3em' font-family='Arial, sans-serif' font-size='24' font-weight='bold' fill='%23343a40'%3EAuditAI%3C/text%3E%3C/svg%3E",
+    image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='240' viewBox='0 0 400 240'%3E%3Crect width='400' height='240' fill='%23fff3e0'/%3E%3Ctext x='200' y='120' text-anchor='middle' dy='.3em' font-family='Arial, sans-serif' font-size='24' font-weight='bold' fill='%23f57c00'%3EDigenio%3C/text%3E%3C/svg%3E",
     technologies: [
       { name: "React", icon: "⚛️", color: "#61dafb" },
-      { name: "Node.js", icon: "🟢", color: "#339933" },
-      { name: "Database", icon: "🗄️", color: "#336791" }
+      { name: "Express", icon: "🚀", color: "#000000" },
+      { name: "MongoDB", icon: "🍃", color: "#47a248" }
     ],
     demoUrl: "#"
   },
@@ -156,7 +156,7 @@ const projectsData = [
   },
   {
     id: 4,
-    title: "Digenio - Sistema de Gestión",
+    title: "Paradise - App de citas",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.",
     image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='240' viewBox='0 0 400 240'%3E%3Crect width='400' height='240' fill='%23fff3e0'/%3E%3Ctext x='200' y='120' text-anchor='middle' dy='.3em' font-family='Arial, sans-serif' font-size='24' font-weight='bold' fill='%23f57c00'%3EDigenio%3C/text%3E%3C/svg%3E",
     technologies: [

@@ -14,6 +14,7 @@ const ExperienceCardWrapper = styled.div`
   align-items: center;
   gap: 24px;
   backdrop-filter: blur(10px);
+  cursor: pointer;
 
   &:hover {
     transform: translateY(-8px);
@@ -125,11 +126,13 @@ const ContentContainer = styled.div`
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 0;
 `;
 
 const ExperienceCard = ({ 
   title, 
+  company,
+  period,
   description, 
   icon,
   iconBg,
@@ -155,18 +158,32 @@ const ExperienceCard = ({
           style={{ 
             fontSize: 'clamp(1.125rem, 2.5vw, 1.375rem)',
             fontWeight: '600',
-            marginBottom: '8px'
+            marginBottom: '0'
           }}
         >
           {title}
         </Typography>
+        {(company || period) && (
+          <Typography 
+            variant="subtitle" 
+            color="#b9ff66"
+            style={{ 
+              fontSize: 'clamp(0.9rem, 2vw, 1rem)',
+              fontWeight: '500',
+              marginTop: '0'
+            }}
+          >
+            {company}{period ? ` · ${period}` : ''}
+          </Typography>
+        )}
         
         <Typography 
           variant="body" 
           color="#cccccc"
           style={{ 
             lineHeight: '1.6',
-            fontSize: 'clamp(0.875rem, 2vw, 0.95rem)'
+            fontSize: 'clamp(0.875rem, 2vw, 0.95rem)',
+            marginTop: '8px'
           }}
         >
           {description}
