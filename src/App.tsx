@@ -14,7 +14,12 @@ function App() {
             Conoce mi trabajo y descubre cómo convierto ideas en aplicaciones web dinámicas y modernas.
           </p>
           <section className="hero__content--button-container">
-            <button className="hero__content--button--primary">Contáctame</button>
+            <button
+              className="hero__content--button--primary"
+              onClick={() => window.open('https://wa.me/51977774529', '_blank', 'noopener,noreferrer')}
+            >
+              Contáctame
+            </button>
             <button className="hero__content--button--secondary">Descarga mi CV</button>
           </section>
           <section className="hero__content--stats-container">

@@ -93,7 +93,7 @@ const IconContainer = styled.div`
   
   ${ExperienceCardWrapper}:hover & svg,
   ${ExperienceCardWrapper}:hover & img {
-    filter: drop-shadow(0 0 12px rgba(0, 255, 136, 0.6)) brightness(1.1) saturate(1.05);
+    filter: drop-shadow(0 0 12px rgba(185, 255, 102, 1);) brightness(1.1) saturate(1.05);
     transform: translateZ(0);
   }
   

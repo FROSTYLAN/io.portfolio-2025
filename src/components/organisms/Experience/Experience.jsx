@@ -104,123 +104,261 @@ const LeaderIcon = () => (
 
 const experienceData = [
   {
-    id: 1,
-    title: "Full Stack Developer",
-    company: "Cadmus Tech",
-    period: "2022 – 2024",
-    location: "Remoto",
-    teamSize: "6 desarrolladores",
-    methodology: "Scrum, entregas quincenales",
-    description: "Lideré la construcción del front con enfoque en performance y accesibilidad.",
-    icon: <FrontendIcon />,
-    iconMaskSrc: frontendIcon,
-    iconBg: "linear-gradient(135deg, #00ff88, #00cc6a)",
-    skills: ["React", "TypeScript", "Vite", "Styled-Components", "Jest", "Accessibility"],
-    outcomes: [
-      "Reducción de LCP en 38% y TTI en 25%",
-      "Incremento de conversión en 14% tras refactor UI",
-      "Definí guía de componentes reutilizables y patrones de accesibilidad"
+    "id": 1,
+    "title": "Full Stack Developer",
+    "company": "Cadmus Tech",
+    "period": "2022 – 2024",
+    "location": "Remoto",
+    "teamSize": "5 desarrolladores",
+    "methodology": "Scrum, entregas quincenales",
+    "description": "Fullstack en proyectos críticos: app de citas con verificación avanzada, sistema de apuestas, sistema de inventario y web corporativa.",
+    "icon": <FrontendIcon />,
+    "iconMaskSrc": frontendIcon,
+    "iconBg": "linear-gradient(135deg, #00ff88, #00cc6a)",
+    "skills": ["React", "Next.js", "Node.js", "TypeScript", "Vite", "Styled-Components", "Jest", "MongoDB", "PostgreSQL", "Sockets"],
+    "outcomes": [
+      "Desarrollo fullstack en 4 proyectos de distinta complejidad",
+      "Integración de verificación de identidad y chat en tiempo real",
+      "Implementación de arquitectura escalable para sistemas de apuestas",
+      "Entrega de sistema de inventario completo para empresa química"
     ],
-    projects: [
+    "projects": [
       {
-        name: "Marketplace B2C",
-        summary: "Refactor de catálogo y checkout, optimizando renders y carga diferida.",
-        tech: ["React", "Suspense", "Code splitting", "Stripe"],
-        impact: ["+12% tasa de compra", "-30% tamaño del bundle"],
-        responsibilities: [
-          "Diseño de arquitectura de estados y cache local",
-          "Implementación de lazy routes y prefetch inteligente"
+        "name": "Paradise (App de citas)",
+        "summary": "App tipo Glambu con verificación exhaustiva para asegurar autenticidad de usuarios.",
+        "tech": ["React", "Node.js", "MongoDB", "Sockets"],
+        "impact": [
+          "Sistema de verificación por DNI con validaciones avanzadas",
+          "Chat en tiempo real estable y escalable",
+          "Búsqueda con filtros avanzados para usuarios"
         ],
-        links: { demo: "#", repo: "#" }
+        "responsibilities": [
+          "Desarrollo del frontend en React",
+          "Implementación de endpoints y lógica de negocio en Node.js",
+          "Flujos de registro, roles (admin, usuario, chicas) y autenticación",
+          "Integración de chat en tiempo real con sockets"
+        ],
+        "links": {}
       },
       {
-        name: "Design System",
-        summary: "Sistema de tokens y librería de componentes accesibles.",
-        tech: ["Storybook", "Styled-Components", "Jest", "RTL"],
-        impact: ["-40% tiempo de desarrollo de nuevas vistas"],
-        responsibilities: [
-          "Definición de tokens de color, tipografía y espaciado",
-          "Pruebas de snapshot y accesibilidad"
+        "name": "Sistema de apuestas de caballos",
+        "summary": "Manejo de saldo, registro de apuestas, gestión de eventos y control administrativo.",
+        "tech": ["React", "Node.js", "PostgreSQL"],
+        "impact": [
+          "Automatización del flujo de registro y resultados",
+          "Módulo seguro para manejo de saldo y transacciones"
         ],
-        links: { docs: "#" }
+        "responsibilities": [
+          "Desarrollo de módulos del lado del servidor",
+          "Interfaz para registro y consulta de apuestas",
+          "Integración con base de datos y control de eventos"
+        ],
+        "links": {}
+      },
+      {
+        "name": "Sistema de Inventario - Empresa PEXOM",
+        "summary": "Sistema completo de inventario para empresa de insumos químicos.",
+        "tech": ["React", "Node.js", "PostgreSQL"],
+        "impact": [
+          "Control de stock, insumos, ingreso y salida del almacén",
+          "Optimización del proceso de compra y registro"
+        ],
+        "responsibilities": [
+          "Proyecto liderado individualmente",
+          "Diseño de base de datos y arquitectura",
+          "Dashboard, reportes y CRUDs completos"
+        ],
+        "links": {}
+      },
+      {
+        "name": "Página web corporativa Cadmus Tech",
+        "summary": "Sitio institucional desarrollado con Next.js.",
+        "tech": ["Next.js", "Styled-Components"],
+        "impact": ["Mejora de presencia digital de la empresa"],
+        "responsibilities": [
+          "Desarrollo completo del sitio",
+          "Optimización SEO básica"
+        ],
+        "links": {}
       }
     ]
   },
   {
-    id: 2,
-    title: "Frontend Developer",
-    company: "Wost Solutions",
-    period: "2020 – 2022",
-    location: "Híbrido",
-    teamSize: "8 (frontend + backend)",
-    methodology: "Kanban",
-    description: "Construcción de APIs y front para dashboards de analítica.",
-    icon: <FullStackIcon />,
-    iconMaskSrc: fullstackIcon,
-    iconBg: "linear-gradient(135deg, #00cc6a, #009955)",
-    skills: ["Node.js", "Express", "PostgreSQL", "React", "Docker"],
-    outcomes: [
-      "Tiempo de respuesta de API -45% con índices y caching",
-      "Automatización CI/CD redujo incidencias de despliegue en 60%"
+    "id": 2,
+    "title": "Frontend Developer",
+    "company": "Wost Solutions",
+    "period": "2020 – 2022",
+    "location": "Híbrido",
+    "teamSize": "11 (2 frontend, 2 mobile, 4 backend, 1 PM, 2 analistas funcionales, 1 jefe de proyecto)",
+    "methodology": "Kanban",
+    "description": "Desarrollo frontend y apoyo backend en sistemas de ventas y ERP empresarial.",
+    "icon": <FullStackIcon />,
+    "iconMaskSrc": fullstackIcon,
+    "iconBg": "linear-gradient(135deg, #00cc6a, #009955)",
+    "skills": ["React", "React 16", ".NET", "Node.js", "Express", "PostgreSQL", "Docker"],
+    "outcomes": [
+      "Mejoras clave en sistema de ventas de Maracuyá",
+      "Participación en ERP masivo para Grupo Rocío y Aviagen",
+      "Optimización de consultas y apoyo en backend .NET"
     ],
-    projects: [
+    "projects": [
       {
-        name: "Dashboard de KPIs",
-        summary: "Visualización en tiempo real con sockets y filtros avanzados.",
-        tech: ["React", "Socket.IO", "PostgreSQL"],
-        impact: ["-50% tiempo de análisis para gerencia"],
-        responsibilities: ["Diseño de modelos", "Queries optimizadas", "Gráficas interactivas"],
-        links: { demo: "#" }
+        "name": "Sistema de ventas – Maracuyá",
+        "summary": "Mejoras al sistema de ventas del negocio Maracuyá (regalos y accesorios).",
+        "tech": ["React", "Node.js", "Express"],
+        "impact": ["Flujos de venta más rápidos y reducción de errores operativos"],
+        "responsibilities": [
+          "Optimización de vistas y componentes",
+          "Ajustes en lógica de ventas y carritos",
+          "Integración con APIs internas"
+        ],
+        "links": {}
+      },
+      {
+        "name": "ERP Grupo Rocío / Aviagen",
+        "summary": "ERP creado desde cero para gestión de compra, crianza de pollos y venta de productos derivados.",
+        "tech": ["React 16", ".NET", "PostgreSQL"],
+        "impact": [
+          "Gestión operativa más eficiente para múltiples plantas",
+          "Centralización de datos críticos del negocio"
+        ],
+        "responsibilities": [
+          "Construcción del frontend operativo en React 16",
+          "Desarrollo de tablas, formularios, flujos complejos y validaciones",
+          "Apoyo al backend .NET en módulos específicos",
+          "Optimización de consultas y endpoints"
+        ],
+        "links": {}
       }
     ]
   },
   {
-    id: 3,
-    title: "Software Developer",
-    company: "Marea Picante",
-    period: "2019 – Presente",
-    location: "Remoto",
-    teamSize: "Individual / colaboraciones",
-    methodology: "Lean",
-    description: "Desarrollo de sitios y MVPs para clientes pequeños y startups.",
-    icon: <FreelanceIcon />,
-    iconMaskSrc: freelanceIcon,
-    iconBg: "linear-gradient(135deg, #009955, #007744)",
-    skills: ["Next.js", "Tailwind", "Supabase", "Stripe"],
-    outcomes: ["Sitios entregados en 2–4 semanas", "Mejoras SEO y Core Web Vitals"],
-    projects: [
+    "id": 3,
+    "title": "Software Developer",
+    "company": "Marea Picante",
+    "period": "2019 – Presente",
+    "location": "Remoto",
+    "teamSize": "Único desarrollador (responsable de todo: arquitectura, diseño, hardware y software)",
+    "methodology": "Lean",
+    "description": "Digitalización completa del restaurante: desde hardware, arquitectura y diseño del sistema hasta el desarrollo fullstack de toda la plataforma operativa.",
+    "icon": <FreelanceIcon />,
+    "iconMaskSrc": freelanceIcon,
+    "iconBg": "linear-gradient(135deg, #009955, #007744)",
+    "skills": [
+      "React",
+      "Next.js",
+      "Node.js",
+      "Supabase",
+      "PostgreSQL",
+      "Tailwind",
+      "Stripe",
+      "Facturación electrónica",
+      "Integración con impresoras"
+    ],
+    "outcomes": [
+      "Sistema operativo que eliminó confusiones en pedidos y cuentas",
+      "Automatización de comandas y reducción significativa de errores de cocina",
+      "Digitalización completa de caja, reportes, delivery y administración",
+      "Panel en tiempo real para la jefa con control total del negocio"
+    ],
+    "projects": [
       {
-        name: "E-commerce artesanal",
-        summary: "Catálogo con pagos y panel de inventario simple.",
-        tech: ["Next.js", "Stripe", "Supabase"],
-        impact: ["+20% ventas en 3 meses"],
-        responsibilities: ["Integración de pagos", "Panel CRUD"],
-        links: { demo: "#" }
+        "name": "Sistema Integral para Restaurante – Marea Picante",
+        "summary": "Plataforma completa para gestionar pedidos, caja, cocina, delivery y reportes en tiempo real.",
+        "tech": ["React", "Next.js", "Node.js", "Supabase", "PostgreSQL"],
+        "impact": [
+          "Pedidos enviados automáticamente a cocina vía impresoras",
+          "Reducción del tiempo de atención y mejora del orden interno",
+          "Visibilidad en tiempo real del estado del restaurante desde el celular"
+        ],
+        "responsibilities": [
+          "Toma de pedidos en tablets y teléfonos",
+          "Vista operativa por mesas, salón, para llevar y delivery",
+          "Modificadores (sin sal, extra limón, poco picante, etc.)",
+          "División y unión de cuentas",
+          "Reapertura de cuentas y edición controlada",
+          "Envío automático a impresoras de cocina, bar y postres",
+          "Estado de mesa: libre, atendiendo, esperando, cuenta pedida",
+          "Apertura y cierre de caja",
+          "Arqueo real vs sistema",
+          "Registro de ingresos, egresos y propinas",
+          "Gestión de métodos de pago: efectivo, Yape/Plin, Visa/Mastercard, QR y mixto",
+          "Boletas y facturas automáticas con integración SUNAT",
+          "Reenvío de comprobantes al correo del cliente",
+          "Reportes: ventas diarias, semanales y mensuales",
+          "Platos más vendidos y rentabilidad",
+          "Configuración de productos, categorías, precios, combos, impresoras y parámetros",
+          "Filtros por mesero, salón, método de pago y tipo de servicio (mesa, para llevar, delivery)",
+          "Panel administrativo completo y dashboard en tiempo real"
+        ],
+        "links": {}
       }
     ]
   },
   {
-    id: 4,
-    title: "Freelance developer",
-    company: "Dacax",
-    period: "2017 – 2019",
-    location: "On-site",
-    teamSize: "10+",
-    methodology: "Scrum",
-    description: "Gestión de equipo y roadmap técnico para múltiples productos internos.",
-    icon: <LeaderIcon />,
-    iconMaskSrc: leaderIcon,
-    iconBg: "linear-gradient(135deg, #007744, #005533)",
-    skills: ["Liderazgo", "Arquitectura", "Mentoring", "QA"],
-    outcomes: ["Reducción de bugs críticos 35%", "Time-to-market -25%"],
-    projects: [
+    "id": 4,
+    "title": "Freelance Developer",
+    "company": "Dacax",
+    "period": "2017 – 2019",
+    "location": "On-site / Remoto",
+    "teamSize": "Freelance (proyectos con equipos externos)",
+    "methodology": "Scrum / Kanban según cliente",
+    "description": "Desarrollo fullstack, levantamiento de requerimientos y arquitectura para múltiples sistemas empresariales creados para clientes corporativos.",
+    "icon": <LeaderIcon />,
+    "iconMaskSrc": leaderIcon,
+    "iconBg": "linear-gradient(135deg, #007744, #005533)",
+    "skills": [
+      "React",
+      "Node.js",
+      "PostgreSQL",
+      "MongoDB",
+      "Arquitectura",
+      "Levantamiento de requerimientos",
+      "QA",
+      "Diseño de sistemas"
+    ],
+    "outcomes": [
+      "Automatización de procesos administrativos y operativos en 3 empresas",
+      "Implementación de sistemas end-to-end desde cero",
+      "Reducción de carga operativa y errores manuales mediante digitalización"
+    ],
+    "projects": [
       {
-        name: "Portal interno de soporte",
-        summary: "Flujos de tickets y SLA con métricas de rendimiento.",
-        tech: ["React", "Node", "MongoDB"],
-        impact: ["SLA cumplido 95%"],
-        responsibilities: ["Roadmap", "Code reviews", "KPIs"],
-        links: { docs: "#" }
+        "name": "Sistema de Reclutamiento – SmartTalent",
+        "summary": "Plataforma completa para gestionar procesos de selección, postulantes y evaluaciones.",
+        "tech": ["React", "Node.js", "MongoDB"],
+        "impact": ["Digitalización del proceso de reclutamiento", "Seguimiento completo de candidatos y etapas"],
+        "responsibilities": [
+          "Análisis y levantamiento de requerimientos",
+          "Arquitectura del sistema",
+          "Desarrollo fullstack de módulos de candidatos, evaluaciones y flujo de selección",
+          "Panel administrativo y reportes"
+        ],
+        "links": {}
+      },
+      {
+        "name": "Gestión de Proyectos – Digenio",
+        "summary": "Plataforma para gestionar proyectos, tareas y seguimiento en tiempo real.",
+        "tech": ["Next.js", "GraphQL", "React", "Node.js", "PostgreSQL"],
+        "impact": ["Mayor control operativo", "Seguimiento centralizado"],
+        "responsibilities": [
+          "Diseño funcional y UI",
+          "Modelado de base de datos",
+          "Desarrollo de módulos de proyectos, tareas y notificaciones"
+        ],
+        "links": {}
+      },
+      {
+        "name": "Coplacont – Sistema Contable",
+        "summary": "Software contable completo para empresa de servicios contables.",
+        "tech": ["React", "Node.js", "PostgreSQL"],
+        "impact": ["Automatización de procesos contables", "Mejor organización y control de documentos"],
+        "responsibilities": [
+          "Definición de arquitectura",
+          "Módulos contables completos: clientes, comprobantes, balances, reportes",
+          "Integración de flujos administrativos"
+        ],
+        "links": {}
       }
     ]
   }
@@ -332,15 +470,15 @@ const Experience = () => {
         <ExperienceContent>
           <SectionHeader>
             <SectionIcon />
-            <Typography 
-              variant="h2" 
+            <Typography
+              variant="h2"
               color="#ffffff"
               style={{ fontFamily: "'Tilt Neon', sans-serif" }}
             >
               Mi experiencia laboral
             </Typography>
           </SectionHeader>
-          
+
           <ExperienceGrid>
             {experienceData.map((experience, index) => (
               <ExperienceCard
@@ -361,40 +499,40 @@ const Experience = () => {
           </ExperienceGrid>
         </ExperienceContent>
       </Container>
-      
+
       {/* Floating Shapes */}
-      <FloatingShape 
-        top="12%" 
-        left="6%" 
+      <FloatingShape
+        top="12%"
+        left="6%"
         size="130px"
         mobileSize="70px"
         rounded
         delay="0s"
         bg="rgba(0, 255, 136, 0.04)"
       />
-      
-      <FloatingShape 
-        bottom="18%" 
-        right="8%" 
+
+      <FloatingShape
+        bottom="18%"
+        right="8%"
         size="110px"
         mobileSize="60px"
         delay="5s"
         bg="rgba(0, 255, 136, 0.06)"
       />
-      
-      <FloatingShape 
-        top="55%" 
-        right="4%" 
+
+      <FloatingShape
+        top="55%"
+        right="4%"
         size="90px"
         mobileSize="50px"
         rounded
         delay="8s"
         bg="rgba(0, 255, 136, 0.03)"
       />
-      
-      <FloatingShape 
-        bottom="45%" 
-        left="8%" 
+
+      <FloatingShape
+        bottom="45%"
+        left="8%"
         size="70px"
         mobileSize="40px"
         delay="3s"
@@ -439,10 +577,21 @@ const Experience = () => {
                   <TagList>
                     {p.tech?.map((t) => (<Tag key={t}>{t}</Tag>))}
                   </TagList>
+                  {p.responsibilities && (
+                    <SectionBlock>
+                      <Typography variant="h3" color="#b9ff66" style={{ fontSize: '1.05rem', fontWeight: 600 }}>Responsabilidades</Typography>
+                      <BulletList>
+                        {p.responsibilities.map((resp, j) => (<li key={j}>{resp}</li>))}
+                      </BulletList>
+                    </SectionBlock>
+                  )}
                   {p.impact && (
-                    <BulletList>
-                      {p.impact.map((imp, j) => (<li key={j}>{imp}</li>))}
-                    </BulletList>
+                    <SectionBlock>
+                      <Typography variant="h3" color="#b9ff66" style={{ fontSize: '1.05rem', fontWeight: 600 }}>Impacto</Typography>
+                      <BulletList>
+                        {p.impact.map((imp, j) => (<li key={j}>{imp}</li>))}
+                      </BulletList>
+                    </SectionBlock>
                   )}
                 </ProjectItem>
               ))}

@@ -92,20 +92,56 @@ const TechIcons = styled.div`
 `;
 
 const TechIcon = styled.div`
-  width: 24px;
-  height: 24px;
+  width: 40px;
+  height: 40px;
   background: ${props => props.bg || '#666'};
-  border-radius: 4px;
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 12px;
   color: white;
-  
+  overflow: hidden;
+  transition: transform 160ms ease, box-shadow 160ms ease, background-color 160ms ease, color 160ms ease;
+  will-change: transform;
+
+  &:hover {
+    transform: scale(1.08);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
+  }
+
+  /* Asegura tamaño y color correcto para SVGs internos */
+  svg {
+    width: 24px;
+    height: 24px;
+    display: block;
+  }
+
+  /* Usa color actual para elementos sin atributo fill explícito */
+  svg path:not([fill]),
+  svg rect:not([fill]),
+  svg circle:not([fill]),
+  svg polygon:not([fill]) {
+    fill: currentColor;
+  }
+
+  /* Respeta elementos con fill="none" y aplica stroke al color actual */
+  svg [stroke="currentColor"] {
+    stroke: currentColor;
+  }
+
   @media (max-width: 768px) {
-    width: 20px;
-    height: 20px;
+    width: 24px;
+    height: 24px;
     font-size: 10px;
+    svg {
+      width: 16px;
+      height: 16px;
+    }
+    &:hover {
+      transform: scale(1.06);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+    }
   }
 `;
 
