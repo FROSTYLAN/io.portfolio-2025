@@ -18,8 +18,8 @@ const ExperienceCardWrapper = styled.div`
 
   &:hover {
     transform: translateY(-8px);
-    border-color: rgba(0, 255, 136, 0.3);
-    box-shadow: 0 20px 40px rgba(0, 255, 136, 0.1);
+    border-color: rgba(185, 255, 102, 0.3);
+    box-shadow: 0 20px 40px rgba(185, 255, 102, 0.1);
     background: rgba(26, 26, 26, 0.95);
     
     &::before {

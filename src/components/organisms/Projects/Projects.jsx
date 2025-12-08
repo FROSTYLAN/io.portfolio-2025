@@ -150,7 +150,7 @@ const projectsData = [
     technologies: [
       { name: "React", icon: <ReactIcon />, color: "linear-gradient(103deg, #17200C 16.66%, #080E02 81.61%)" },
       { name: "Express", icon: <NodeJsIcon />, color: "linear-gradient(103deg, #17200C 16.66%, #080E02 81.61%)" },
-      { name: "MongoDB", icon: <DatabaseIcon />, color: "linear-gradient(103deg, #17200C 16.66%, #080E02 81.61%)" }
+      { name: "MongoDB", icon: <TailwindIcon />, color: "linear-gradient(103deg, #17200C 16.66%, #080E02 81.61%)" }
     ],
     demoUrl: "#"
   },
@@ -162,7 +162,7 @@ const projectsData = [
     technologies: [
       { name: "React", icon: <ReactIcon />, color: "linear-gradient(103deg, #17200C 16.66%, #080E02 81.61%)" },
       { name: "Express", icon: <NodeJsIcon />, color: "linear-gradient(103deg, #17200C 16.66%, #080E02 81.61%)" },
-      { name: "MongoDB", icon: <DatabaseIcon />, color: "linear-gradient(103deg, #17200C 16.66%, #080E02 81.61%)" }
+      { name: "MongoDB", icon: <TailwindIcon />, color: "linear-gradient(103deg, #17200C 16.66%, #080E02 81.61%)" }
     ],
     demoUrl: "#"
   }

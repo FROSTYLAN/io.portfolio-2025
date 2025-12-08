@@ -105,9 +105,125 @@ const LeaderIcon = () => (
 const experienceData = [
   {
     "id": 1,
+    "title": "Freelance Developer",
+    "company": "Dacax",
+    "period": "2025 – presente",
+    "location": "On-site / Remoto",
+    "teamSize": "Freelance (proyectos con equipos externos)",
+    "methodology": "Scrum / Kanban según cliente",
+    "description": "Desarrollo fullstack, levantamiento de requerimientos y arquitectura para múltiples sistemas empresariales creados para clientes corporativos.",
+    "icon": <LeaderIcon />,
+    "iconMaskSrc": leaderIcon,
+    "iconBg": "linear-gradient(135deg, #007744, #005533)",
+    "skills": [
+      "React",
+      "Node.js",
+      "PostgreSQL",
+      "MongoDB",
+      "Arquitectura",
+      "Levantamiento de requerimientos",
+      "QA",
+      "Diseño de sistemas"
+    ],
+    "outcomes": [
+      "Automatización de procesos administrativos y operativos en 3 empresas",
+      "Implementación de sistemas end-to-end desde cero",
+      "Reducción de carga operativa y errores manuales mediante digitalización"
+    ],
+    "projects": [
+      {
+        "name": "Sistema de Reclutamiento – SmartTalent",
+        "summary": "Plataforma completa para gestionar procesos de selección, postulantes y evaluaciones.",
+        "tech": ["React", "Node.js", "MongoDB"],
+        "impact": ["Digitalización del proceso de reclutamiento", "Seguimiento completo de candidatos y etapas"],
+        "responsibilities": [
+          "Análisis y levantamiento de requerimientos",
+          "Arquitectura del sistema",
+          "Desarrollo fullstack de módulos de candidatos, evaluaciones y flujo de selección",
+          "Panel administrativo y reportes"
+        ],
+        "links": {}
+      },
+      {
+        "name": "Gestión de Proyectos – Digenio",
+        "summary": "Plataforma para gestionar proyectos, tareas y seguimiento en tiempo real.",
+        "tech": ["Next.js", "GraphQL", "React", "Node.js", "PostgreSQL"],
+        "impact": ["Mayor control operativo", "Seguimiento centralizado"],
+        "responsibilities": [
+          "Diseño funcional y UI",
+          "Modelado de base de datos",
+          "Desarrollo de módulos de proyectos, tareas y notificaciones"
+        ],
+        "links": {}
+      },
+      {
+        "name": "Coplacont – Sistema Contable",
+        "summary": "Software contable completo para empresa de servicios contables.",
+        "tech": ["React", "Node.js", "PostgreSQL"],
+        "impact": ["Automatización de procesos contables", "Mejor organización y control de documentos"],
+        "responsibilities": [
+          "Definición de arquitectura",
+          "Módulos contables completos: clientes, comprobantes, balances, reportes",
+          "Integración de flujos administrativos"
+        ],
+        "links": {}
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Frontend Developer",
+    "company": "Wost Solutions",
+    "period": "2024 – 2025",
+    "location": "Híbrido",
+    "teamSize": "11 (2 frontend, 2 mobile, 4 backend, 1 PM, 2 analistas funcionales, 1 jefe de proyecto)",
+    "methodology": "Kanban",
+    "description": "Desarrollo frontend y apoyo backend en sistemas de ventas y ERP empresarial.",
+    "icon": <FullStackIcon />,
+    "iconMaskSrc": fullstackIcon,
+    "iconBg": "linear-gradient(135deg, #00cc6a, #009955)",
+    "skills": ["React", "React 16", ".NET", "Node.js", "Express", "PostgreSQL", "Docker"],
+    "outcomes": [
+      "Mejoras clave en sistema de ventas de Maracuyá",
+      "Participación en ERP masivo para Grupo Rocío y Aviagen",
+      "Optimización de consultas y apoyo en backend .NET"
+    ],
+    "projects": [
+      {
+        "name": "Sistema de ventas – Maracuyá",
+        "summary": "Mejoras al sistema de ventas del negocio Maracuyá (regalos y accesorios).",
+        "tech": ["React", "Node.js", "Express"],
+        "impact": ["Flujos de venta más rápidos y reducción de errores operativos"],
+        "responsibilities": [
+          "Optimización de vistas y componentes",
+          "Ajustes en lógica de ventas y carritos",
+          "Integración con APIs internas"
+        ],
+        "links": {}
+      },
+      {
+        "name": "ERP Grupo Rocío / Aviagen",
+        "summary": "ERP creado desde cero para gestión de compra, crianza de pollos y venta de productos derivados.",
+        "tech": ["React 16", ".NET", "PostgreSQL"],
+        "impact": [
+          "Gestión operativa más eficiente para múltiples plantas",
+          "Centralización de datos críticos del negocio"
+        ],
+        "responsibilities": [
+          "Construcción del frontend operativo en React 16",
+          "Desarrollo de tablas, formularios, flujos complejos y validaciones",
+          "Apoyo al backend .NET en módulos específicos",
+          "Optimización de consultas y endpoints"
+        ],
+        "links": {}
+      }
+    ]
+  },
+  {
+    "id": 3,
     "title": "Full Stack Developer",
     "company": "Cadmus Tech",
-    "period": "2022 – 2024",
+    "period": "2023 – 2024",
     "location": "Remoto",
     "teamSize": "5 desarrolladores",
     "methodology": "Scrum, entregas quincenales",
@@ -184,59 +300,10 @@ const experienceData = [
     ]
   },
   {
-    "id": 2,
-    "title": "Frontend Developer",
-    "company": "Wost Solutions",
-    "period": "2020 – 2022",
-    "location": "Híbrido",
-    "teamSize": "11 (2 frontend, 2 mobile, 4 backend, 1 PM, 2 analistas funcionales, 1 jefe de proyecto)",
-    "methodology": "Kanban",
-    "description": "Desarrollo frontend y apoyo backend en sistemas de ventas y ERP empresarial.",
-    "icon": <FullStackIcon />,
-    "iconMaskSrc": fullstackIcon,
-    "iconBg": "linear-gradient(135deg, #00cc6a, #009955)",
-    "skills": ["React", "React 16", ".NET", "Node.js", "Express", "PostgreSQL", "Docker"],
-    "outcomes": [
-      "Mejoras clave en sistema de ventas de Maracuyá",
-      "Participación en ERP masivo para Grupo Rocío y Aviagen",
-      "Optimización de consultas y apoyo en backend .NET"
-    ],
-    "projects": [
-      {
-        "name": "Sistema de ventas – Maracuyá",
-        "summary": "Mejoras al sistema de ventas del negocio Maracuyá (regalos y accesorios).",
-        "tech": ["React", "Node.js", "Express"],
-        "impact": ["Flujos de venta más rápidos y reducción de errores operativos"],
-        "responsibilities": [
-          "Optimización de vistas y componentes",
-          "Ajustes en lógica de ventas y carritos",
-          "Integración con APIs internas"
-        ],
-        "links": {}
-      },
-      {
-        "name": "ERP Grupo Rocío / Aviagen",
-        "summary": "ERP creado desde cero para gestión de compra, crianza de pollos y venta de productos derivados.",
-        "tech": ["React 16", ".NET", "PostgreSQL"],
-        "impact": [
-          "Gestión operativa más eficiente para múltiples plantas",
-          "Centralización de datos críticos del negocio"
-        ],
-        "responsibilities": [
-          "Construcción del frontend operativo en React 16",
-          "Desarrollo de tablas, formularios, flujos complejos y validaciones",
-          "Apoyo al backend .NET en módulos específicos",
-          "Optimización de consultas y endpoints"
-        ],
-        "links": {}
-      }
-    ]
-  },
-  {
-    "id": 3,
+    "id": 4,
     "title": "Software Developer",
     "company": "Marea Picante",
-    "period": "2019 – Presente",
+    "period": "2022 – 2023",
     "location": "Remoto",
     "teamSize": "Único desarrollador (responsable de todo: arquitectura, diseño, hardware y software)",
     "methodology": "Lean",
@@ -295,73 +362,6 @@ const experienceData = [
       }
     ]
   },
-  {
-    "id": 4,
-    "title": "Freelance Developer",
-    "company": "Dacax",
-    "period": "2017 – 2019",
-    "location": "On-site / Remoto",
-    "teamSize": "Freelance (proyectos con equipos externos)",
-    "methodology": "Scrum / Kanban según cliente",
-    "description": "Desarrollo fullstack, levantamiento de requerimientos y arquitectura para múltiples sistemas empresariales creados para clientes corporativos.",
-    "icon": <LeaderIcon />,
-    "iconMaskSrc": leaderIcon,
-    "iconBg": "linear-gradient(135deg, #007744, #005533)",
-    "skills": [
-      "React",
-      "Node.js",
-      "PostgreSQL",
-      "MongoDB",
-      "Arquitectura",
-      "Levantamiento de requerimientos",
-      "QA",
-      "Diseño de sistemas"
-    ],
-    "outcomes": [
-      "Automatización de procesos administrativos y operativos en 3 empresas",
-      "Implementación de sistemas end-to-end desde cero",
-      "Reducción de carga operativa y errores manuales mediante digitalización"
-    ],
-    "projects": [
-      {
-        "name": "Sistema de Reclutamiento – SmartTalent",
-        "summary": "Plataforma completa para gestionar procesos de selección, postulantes y evaluaciones.",
-        "tech": ["React", "Node.js", "MongoDB"],
-        "impact": ["Digitalización del proceso de reclutamiento", "Seguimiento completo de candidatos y etapas"],
-        "responsibilities": [
-          "Análisis y levantamiento de requerimientos",
-          "Arquitectura del sistema",
-          "Desarrollo fullstack de módulos de candidatos, evaluaciones y flujo de selección",
-          "Panel administrativo y reportes"
-        ],
-        "links": {}
-      },
-      {
-        "name": "Gestión de Proyectos – Digenio",
-        "summary": "Plataforma para gestionar proyectos, tareas y seguimiento en tiempo real.",
-        "tech": ["Next.js", "GraphQL", "React", "Node.js", "PostgreSQL"],
-        "impact": ["Mayor control operativo", "Seguimiento centralizado"],
-        "responsibilities": [
-          "Diseño funcional y UI",
-          "Modelado de base de datos",
-          "Desarrollo de módulos de proyectos, tareas y notificaciones"
-        ],
-        "links": {}
-      },
-      {
-        "name": "Coplacont – Sistema Contable",
-        "summary": "Software contable completo para empresa de servicios contables.",
-        "tech": ["React", "Node.js", "PostgreSQL"],
-        "impact": ["Automatización de procesos contables", "Mejor organización y control de documentos"],
-        "responsibilities": [
-          "Definición de arquitectura",
-          "Módulos contables completos: clientes, comprobantes, balances, reportes",
-          "Integración de flujos administrativos"
-        ],
-        "links": {}
-      }
-    ]
-  }
 ];
 
 const ModalOverlay = styled.div`

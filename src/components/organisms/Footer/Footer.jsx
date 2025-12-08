@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { Typography, Container, Button, Divider } from '../../atoms';
-import ctaBg from './container.png';
+import { useState } from 'react';
 
 const FooterWrapper = styled.footer`
   padding: 0 0 40px;
@@ -82,7 +82,25 @@ const ContactButton = styled(Button)`
   font-size: 16px;
   font-weight: 600;
   min-width: 200px;
- 
+  cursor: pointer;
+  transition: border-color 160ms ease, box-shadow 160ms ease, transform 160ms ease, background-color 160ms ease;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+
+  &:hover {
+    border-color: rgba(185, 255, 102, 0.50);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 42px rgba(185, 255, 102, 0.14), 0 8px 30px rgba(180, 215, 138, 0.50) inset;
+  }
+
+  &:focus,
+  &:focus-visible,
+  &:focus-within {
+    outline: none;
+    border-color: rgba(185, 255, 102, 0.50);
+    box-shadow: 0 8px 40px rgba(185, 255, 102, 0.10), 0 8px 30px rgba(180, 215, 138, 0.50) inset;
+  }
+
   @media (max-width: 768px) {
     padding: 14px 28px;
     font-size: 15px;
@@ -136,7 +154,7 @@ const SocialLink = styled.a`
   
   &:hover {
     background: rgba(0, 255, 136, 0.1);
-    border-color: rgba(0, 255, 136, 0.3);
+    border-color: rgba(185, 255, 102, 1);;
     transform: translateY(-2px);
   }
   
@@ -148,7 +166,7 @@ const SocialLink = styled.a`
   }
   
   &:hover svg {
-    fill: #00ff88;
+    fill: rgba(185, 255, 102, 1);
   }
   
   @media (max-width: 768px) {
@@ -160,6 +178,104 @@ const SocialLink = styled.a`
       height: 18px;
     }
   }
+`;
+
+// Modal sencillo para "Ubicación"
+const FooterModalOverlay = styled.div`
+  display: ${props => (props.$open ? 'block' : 'none')};
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(6px);
+  z-index: 2000;
+`;
+
+const FooterModalContainer = styled.div`
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: min(460px, 92vw);
+  border-radius: 18px;
+  border: 1px solid #3C4434;
+  background: linear-gradient(103deg, #0F1408 16.66%, rgba(23, 32, 9, 0.27) 81.61%);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.35);
+  padding: 60px 20px 24px;
+  z-index: 2001;
+`;
+
+const FooterModalHeader = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 12px;
+`;
+const AccentWord = styled.span`
+  color: #b9ff66;
+  font-weight: 400;
+
+  svg {
+    width: 16px;
+    height: 16px;
+    fill: #b9ff66;
+    margin-right: 6px;
+    vertical-align: middle;
+  }
+`;
+const FooterModalActions = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 12px;
+  flex-wrap: wrap;
+`;
+const FooterModalButton = styled(Button)`
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.30);
+  background: linear-gradient(180deg, rgba(64, 90, 33, 0.00) -37.5%, rgba(185, 255, 102, 0.10) 0%);
+  box-shadow: 0 6px 26px rgba(185, 255, 102, 0.10), 0 6px 20px rgba(180, 215, 138, 0.40) inset;
+  color: #ffffff;
+  padding: 12px 18px;
+  font-size: 14px;
+  font-weight: 600;
+  min-width: unset;
+  cursor: pointer;
+  transition: border-color 160ms ease, box-shadow 160ms ease, transform 160ms ease, background-color 160ms ease;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+
+  &:hover {
+    color: #ffffff;
+    border-color: rgba(185, 255, 102, 0.50);
+    transform: translateY(-1px);
+    box-shadow: 0 8px 30px rgba(185, 255, 102, 0.12), 0 6px 20px rgba(180, 215, 138, 0.40) inset;
+  }
+
+  &:visited,
+  &:focus,
+  &:active {
+    color: #ffffff;
+    text-decoration: none;
+  }
+`;
+
+const FooterCloseButton = styled.button`
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: none;
+  border: 1px solid rgba(255,255,255,0.18);
+  color: #ffffff;
+  border-radius: 10px;
+  padding: 6px 10px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
+  
+  &:hover { background: rgba(255,255,255,0.12); }
 `;
 
 const FloatingShape = styled.div`
@@ -213,10 +329,14 @@ const LinkedInIcon = () => (
 );
 
 const Footer = () => {
+  const [locationModalOpen, setLocationModalOpen] = useState(false);
+
   const handleContactClick = () => {
-    // Aquí puedes agregar la lógica para abrir un modal de contacto o redirigir
-    console.log('Contactar clicked');
+    window.open('https://wa.me/51977774529', '_blank', 'noopener,noreferrer');
   };
+
+  const openLocationModal = () => setLocationModalOpen(true);
+  const closeLocationModal = () => setLocationModalOpen(false);
 
   return (
     <FooterWrapper>
@@ -291,25 +411,42 @@ const Footer = () => {
             </Copyright>
 
             <SocialLinks>
-              <SocialLink href="mailto:charles@example.com" title="Email">
+              <SocialLink href="mailto:ducz.daca@icloud.com" title="Email">
                 <EmailIcon />
               </SocialLink>
 
-              <SocialLink href="https://wa.me/1234567890" title="WhatsApp" target="_blank">
+              <SocialLink href="https://wa.me/51977774529" title="WhatsApp" target="_blank">
                 <WhatsAppIcon />
               </SocialLink>
 
-              <SocialLink href="#" title="Ubicación">
+              <SocialLink href="#" title="Ubicación" role="button" onClick={(e) => { e.preventDefault(); openLocationModal(); }}>
                 <LocationIcon />
               </SocialLink>
 
-              <SocialLink href="https://linkedin.com/in/charlescastillo" title="LinkedIn" target="_blank">
+              <SocialLink href="https://www.linkedin.com/in/charles-castillo-772968234" title="LinkedIn" target="_blank">
                 <LinkedInIcon />
               </SocialLink>
             </SocialLinks>
           </FooterBottom>
         </FooterContent>
       </Container>
+
+      {/* Modal Ubicación */}
+      <FooterModalOverlay $open={locationModalOpen} onClick={closeLocationModal} />
+      {locationModalOpen && (
+        <FooterModalContainer role="dialog" aria-modal="true">
+          <FooterCloseButton onClick={closeLocationModal} aria-label="Cerrar">Cerrar</FooterCloseButton>
+          <FooterModalHeader>
+            <Typography variant="h3" color="#ffffff" style={{ fontFamily: '"Tilt Neon"', fontSize: '1.25rem', letterSpacing: '0.2px', lineHeight: '1.6', textAlign: 'center', margin: '12px auto 12px', maxWidth: '400px', width: '100%', flex: 1 }}>
+              En <AccentWord><svg viewBox="0 0 24 24" style={{width: '16px', height: '16px'}}><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>Perú</AccentWord> pero a un paso de trabajar <AccentWord>contigo</AccentWord>
+            </Typography>
+          </FooterModalHeader>
+          <FooterModalActions>
+            <FooterModalButton as="a" href="https://wa.me/51977774529" target="_blank" rel="noopener noreferrer">Ir a WhatsApp</FooterModalButton>
+            <FooterModalButton as="a" href="https://www.linkedin.com/in/charles-castillo-772968234" target="_blank" rel="noopener noreferrer">Ver CV</FooterModalButton>
+          </FooterModalActions>
+        </FooterModalContainer>
+      )}
 
       {/* Floating Shapes */}
       <FloatingShape

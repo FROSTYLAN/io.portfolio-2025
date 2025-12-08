@@ -19,10 +19,10 @@ const IconContainer = styled.div`
     
     svg {
       transform: scale(1.1);
-      filter: drop-shadow(0 0 12px rgba(0, 255, 136, 0.6)) brightness(1.05) saturate(1.15);
-      fill: #00ff88;
-      stroke: #00ff88;
-      color: #00ff88;
+      filter: drop-shadow(0 0 12px rgba(185, 255, 102, 0.6)) brightness(1.05) saturate(1.15);
+      fill: rgba(185, 255, 102, 1);
+      stroke: rgba(185, 255, 102, 1);
+      color: rgba(185, 255, 102, 1);
     }
   }
   

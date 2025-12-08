@@ -163,7 +163,8 @@ const AboutMe = () => {
                     color="#b9ff66"
                     style={{ 
                       fontSize: 'clamp(1.125rem, 2.5vw, 1.5rem)',
-                      fontWeight: 600
+                      fontWeight: 600,
+                      marginBottom: '14px'
                     }}
                   >
                     {item.title}
