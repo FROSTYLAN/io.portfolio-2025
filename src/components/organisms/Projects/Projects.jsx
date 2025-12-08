@@ -2,6 +2,11 @@ import styled from 'styled-components';
 import { Typography, Container, ProjectCard, ReactIcon, NodeJsIcon, DatabaseIcon, TailwindIcon } from '../../atoms';
 import background from './background.png';
 
+import auditiaImg from './demo.auditia.png';
+import digenioImg from './demo.digenio.png';
+import smartTalentImg from './demo.smarttalent.png';
+import copalcontImg from './demo.coplacont.png';
+
 const ProjectsSectionWrapper = styled.section`
   padding: 80px 0;
   position: relative;
@@ -122,7 +127,7 @@ const projectsData = [
     id: 1,
     title: "AuditIA - Sistema de auditoría",
     description: "Plataforma de auditoría asistida por IA para detectar anomalías y generar reportes accionables.",
-    image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='240' viewBox='0 0 400 240'%3E%3Crect width='400' height='240' fill='%23fff3e0'/%3E%3Ctext x='200' y='120' text-anchor='middle' dy='.3em' font-family='Arial, sans-serif' font-size='24' font-weight='bold' fill='%23f57c00'%3EDigenio%3C/text%3E%3C/svg%3E",
+    image: auditiaImg,
     technologies: [
       { name: "React", icon: <ReactIcon />, color: "linear-gradient(103deg, #17200C 16.66%, #080E02 81.61%)" },
       { name: "Express", icon: <NodeJsIcon />, color: "linear-gradient(103deg, #17200C 16.66%, #080E02 81.61%)" },
@@ -134,7 +139,7 @@ const projectsData = [
     id: 2,
     title: "Digenio - Sistema de Gestión",
     description: "Plataforma para gestión de personal, equipos de desarrollo y proyectos o startups.",
-    image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='240' viewBox='0 0 400 240'%3E%3Crect width='400' height='240' fill='%23fff3e0'/%3E%3Ctext x='200' y='120' text-anchor='middle' dy='.3em' font-family='Arial, sans-serif' font-size='24' font-weight='bold' fill='%23f57c00'%3EDigenio%3C/text%3E%3C/svg%3E",
+    image: digenioImg,
     technologies: [
       { name: "React", icon: <ReactIcon />, color: "linear-gradient(103deg, #17200C 16.66%, #080E02 81.61%)" },
       { name: "Express", icon: <NodeJsIcon />, color: "linear-gradient(103deg, #17200C 16.66%, #080E02 81.61%)" },
@@ -146,7 +151,7 @@ const projectsData = [
     id: 3,
     title: "SmartTalent - Gestión de RR.HH.",
     description: "Portal de RR.HH. para reclutamiento, evaluación y seguimiento de desempeño.",
-    image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='240' viewBox='0 0 400 240'%3E%3Crect width='400' height='240' fill='%23e3f2fd'/%3E%3Ctext x='200' y='120' text-anchor='middle' dy='.3em' font-family='Arial, sans-serif' font-size='20' font-weight='bold' fill='%231976d2'%3ESmartTalent%3C/text%3E%3C/svg%3E",
+    image: smartTalentImg,
     technologies: [
       { name: "React", icon: <ReactIcon />, color: "linear-gradient(103deg, #17200C 16.66%, #080E02 81.61%)" },
       { name: "Express", icon: <NodeJsIcon />, color: "linear-gradient(103deg, #17200C 16.66%, #080E02 81.61%)" },
@@ -158,7 +163,7 @@ const projectsData = [
     id: 4,
     title: "Coplacont - Sistema Contable",
     description: "Sistema contable con estados financieros, conciliación y automatización de asientos.",
-    image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='240' viewBox='0 0 400 240'%3E%3Crect width='400' height='240' fill='%23f3e5f5'/%3E%3Ctext x='200' y='120' text-anchor='middle' dy='.3em' font-family='Arial, sans-serif' font-size='20' font-weight='bold' fill='%237b1fa2'%3ECoplacont%3C/text%3E%3C/svg%3E",
+    image: copalcontImg,
     technologies: [
       { name: "React", icon: <ReactIcon />, color: "linear-gradient(103deg, #17200C 16.66%, #080E02 81.61%)" },
       { name: "Express", icon: <NodeJsIcon />, color: "linear-gradient(103deg, #17200C 16.66%, #080E02 81.61%)" },

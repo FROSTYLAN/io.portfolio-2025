@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import { Typography, Button } from '../index';
-import exampleImg from './example-img.png';
 
 const ProjectCardWrapper = styled.div`
   border-radius: 34.255px;
@@ -224,7 +223,7 @@ const ProjectCard = ({
 
   return (
     <ProjectCardWrapper {...props}>
-      <ProjectImage src={exampleImg} alt={title || 'Proyecto'} />
+      <ProjectImage src={image} alt={title || 'Proyecto'} />
       
       <ProjectContent>
         <ProjectHeader>
