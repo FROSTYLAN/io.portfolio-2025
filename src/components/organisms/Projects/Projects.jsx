@@ -125,9 +125,9 @@ const FloatingShape = styled.div`
 const projectsData = [
   {
     id: 1,
-    title: "AuditIA - Sistema de auditoría",
-    description: "Plataforma de auditoría asistida por IA para detectar anomalías y generar reportes accionables.",
-    image: auditiaImg,
+    title: "Coplacont - Sistema Contable",
+    description: "Sistema contable con estados financieros, conciliación y automatización de asientos.",
+    image: copalcontImg,
     technologies: [
       { name: "React", icon: <ReactIcon />, color: "linear-gradient(103deg, #17200C 16.66%, #080E02 81.61%)" },
       { name: "Express", icon: <NodeJsIcon />, color: "linear-gradient(103deg, #17200C 16.66%, #080E02 81.61%)" },
@@ -135,20 +135,9 @@ const projectsData = [
     ],
     demoUrl: "#"
   },
+
   {
     id: 2,
-    title: "Digenio - Sistema de Gestión",
-    description: "Plataforma para gestión de personal, equipos de desarrollo y proyectos o startups.",
-    image: digenioImg,
-    technologies: [
-      { name: "React", icon: <ReactIcon />, color: "linear-gradient(103deg, #17200C 16.66%, #080E02 81.61%)" },
-      { name: "Express", icon: <NodeJsIcon />, color: "linear-gradient(103deg, #17200C 16.66%, #080E02 81.61%)" },
-      { name: "MongoDB", icon: <TailwindIcon />, color: "linear-gradient(103deg, #17200C 16.66%, #080E02 81.61%)" }
-    ],
-    demoUrl: "https://demo-digenio.vercel.app"
-  },
-  {
-    id: 3,
     title: "SmartTalent - Gestión de RR.HH.",
     description: "Portal de RR.HH. para reclutamiento, evaluación y seguimiento de desempeño.",
     image: smartTalentImg,
@@ -160,16 +149,28 @@ const projectsData = [
     demoUrl: "#"
   },
   {
-    id: 4,
-    title: "Coplacont - Sistema Contable",
-    description: "Sistema contable con estados financieros, conciliación y automatización de asientos.",
-    image: copalcontImg,
+    id: 3,
+    title: "Digenio - Sistema de Gestión",
+    description: "Plataforma para gestión de personal, equipos de desarrollo y proyectos o startups.",
+    image: digenioImg,
     technologies: [
       { name: "React", icon: <ReactIcon />, color: "linear-gradient(103deg, #17200C 16.66%, #080E02 81.61%)" },
       { name: "Express", icon: <NodeJsIcon />, color: "linear-gradient(103deg, #17200C 16.66%, #080E02 81.61%)" },
       { name: "MongoDB", icon: <TailwindIcon />, color: "linear-gradient(103deg, #17200C 16.66%, #080E02 81.61%)" }
     ],
-    demoUrl: "#"
+    demoUrl: "https://demo-digenio.vercel.app"
+  },
+  {
+    id: 4,
+    title: "MP Cashier - Gestión de ventas",
+    description: "Plataforma web para gestión de caja, que se complementa con una aplicación móvil para los meseros.",
+    image: digenioImg,
+    technologies: [
+      { name: "React", icon: <ReactIcon />, color: "linear-gradient(103deg, #17200C 16.66%, #080E02 81.61%)" },
+      { name: "Express", icon: <NodeJsIcon />, color: "linear-gradient(103deg, #17200C 16.66%, #080E02 81.61%)" },
+      { name: "MongoDB", icon: <TailwindIcon />, color: "linear-gradient(103deg, #17200C 16.66%, #080E02 81.61%)" }
+    ],
+    demoUrl: "https://demo-digenio.vercel.app"
   }
 ];
 
