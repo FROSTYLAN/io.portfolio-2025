@@ -3,9 +3,9 @@ import { Typography, Container, Divider } from '../../atoms';
 
 const AboutSectionWrapper = styled.section`
   padding: 80px 0;  background: transparent;
-
   position: relative;
   overflow: hidden;
+  z-index: 9999;
   
   &::before {
     content: '';

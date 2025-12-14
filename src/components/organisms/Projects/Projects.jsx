@@ -86,14 +86,35 @@ const SectionIcon = styled.div`
 
 const ProjectsGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 32px;
-  
+  justify-items: center;
+  align-items: start;
+  justify-content: center;
+  align-content: center;
+  width: 100%;
+  margin: 0 auto;
+  min-height: clamp(360px, 60vh, 760px);
+  box-sizing: border-box;
+
+  @media (max-width: 1024px) {
+    gap: 28px;
+    max-width: 1000px;
+    min-height: clamp(320px, 55vh, 680px);
+  }
+
   @media (max-width: 968px) {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 24px;
     max-width: 600px;
-    margin: 0 auto;
+    min-height: clamp(280px, 50vh, 600px);
+  }
+
+  @media (max-width: 600px) {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    max-width: 520px;
+    min-height: clamp(240px, 48vh, 520px);
   }
 `;
 
@@ -160,18 +181,18 @@ const projectsData = [
     ],
     demoUrl: "https://demo-digenio.vercel.app"
   },
-  {
-    id: 4,
-    title: "MP Cashier - Gestión de ventas",
-    description: "Plataforma web para gestión de caja, que se complementa con una aplicación móvil para los meseros.",
-    image: digenioImg,
-    technologies: [
-      { name: "React", icon: <ReactIcon />, color: "linear-gradient(103deg, #17200C 16.66%, #080E02 81.61%)" },
-      { name: "Express", icon: <NodeJsIcon />, color: "linear-gradient(103deg, #17200C 16.66%, #080E02 81.61%)" },
-      { name: "MongoDB", icon: <TailwindIcon />, color: "linear-gradient(103deg, #17200C 16.66%, #080E02 81.61%)" }
-    ],
-    demoUrl: "https://demo-digenio.vercel.app"
-  }
+  // {
+  //   id: 4,
+  //   title: "MP Cashier - Gestión de ventas",
+  //   description: "Plataforma web para gestión de caja, que se complementa con una aplicación móvil para los meseros.",
+  //   image: digenioImg,
+  //   technologies: [
+  //     { name: "React", icon: <ReactIcon />, color: "linear-gradient(103deg, #17200C 16.66%, #080E02 81.61%)" },
+  //     { name: "Express", icon: <NodeJsIcon />, color: "linear-gradient(103deg, #17200C 16.66%, #080E02 81.61%)" },
+  //     { name: "MongoDB", icon: <TailwindIcon />, color: "linear-gradient(103deg, #17200C 16.66%, #080E02 81.61%)" }
+  //   ],
+  //   demoUrl: "https://demo-digenio.vercel.app"
+  // }
 ];
 
 const Projects = () => {

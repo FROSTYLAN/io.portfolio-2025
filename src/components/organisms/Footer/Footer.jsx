@@ -22,9 +22,6 @@ const FooterWrapper = styled.footer`
     pointer-events: none;
   }
   
-  @media (max-width: 768px) {
-    padding: 60px 0 30px;
-  }
 `;
 
 const FooterContent = styled.div`
@@ -328,6 +325,12 @@ const LinkedInIcon = () => (
   </svg>
 );
 
+const GitHubIcon = () => (
+  <svg viewBox="0 0 24 24">
+    <path d="M12 .5C5.73.5.5 5.73.5 12c0 5.1 3.3 9.4 7.9 10.9.58.1.79-.25.79-.55v-2.1c-3.22.7-3.9-1.55-3.9-1.55-.53-1.35-1.3-1.7-1.3-1.7-1.06-.73.08-.72.08-.72 1.17.08 1.78 1.2 1.78 1.2 1.04 1.78 2.74 1.26 3.4.96.1-.75.4-1.26.72-1.55-2.57-.29-5.27-1.28-5.27-5.72 0-1.26.45-2.29 1.2-3.1-.12-.3-.52-1.55.12-3.22 0 0 .97-.31 3.2 1.18a11.08 11.08 0 0 1 2.92-.39c.99 0 2 .13 2.94.39 2.22-1.5 3.2-1.18 3.2-1.18.64 1.67.24 2.92.12 3.22.75.81 1.2 1.84 1.2 3.1 0 4.45-2.7 5.42-5.28 5.7.41.36.77 1.08.77 2.18v3.24c0 .3.2.66.8.55A11.51 11.51 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5Z" />
+  </svg>
+);
+
 const Footer = () => {
   const [locationModalOpen, setLocationModalOpen] = useState(false);
 
@@ -425,6 +428,10 @@ const Footer = () => {
 
               <SocialLink href="https://www.linkedin.com/in/charles-castillo-772968234" title="LinkedIn" target="_blank">
                 <LinkedInIcon />
+              </SocialLink>
+              
+              <SocialLink href="https://github.com/FROSTYLAN" title="GitHub" target="_blank" aria-label="Mi perfil de GitHub">
+                <GitHubIcon />
               </SocialLink>
             </SocialLinks>
           </FooterBottom>

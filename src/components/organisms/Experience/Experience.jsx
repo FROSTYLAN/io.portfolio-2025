@@ -12,9 +12,6 @@ const ExperienceSectionWrapper = styled.section`
   position: relative;
   overflow: visible;
   
-  @media (max-width: 768px) {
-    padding: 60px 0;
-  }
 `;
 
 const ExperienceContent = styled.div`

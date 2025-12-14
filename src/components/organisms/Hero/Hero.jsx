@@ -30,10 +30,10 @@ const Hero = ({ children }) => {
       </div>
       <div className='hero__gh-icon'>
         <a
-          href="https://github.com/DacaxSAC"
+          href="https://github.com/FROSTYLAN"
           target="_blank"
           rel="noopener noreferrer"
-          aria-label="GitHub de Charles Castillo"
+          aria-label="Mi perfil de GitHub"
         >
           <img src={github} alt="GitHub" />
         </a>

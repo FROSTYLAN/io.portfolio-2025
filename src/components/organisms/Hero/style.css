@@ -109,10 +109,7 @@
     }
 
     .hero__atom {
-        bottom: -200px;
-        right: -200px;
-        rotate: 25deg;
-        scale: 1;
+        display: none;
     }
 
     .hero__charles {
