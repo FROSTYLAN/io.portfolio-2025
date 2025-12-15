@@ -129,6 +129,42 @@ const ContentContainer = styled.div`
   gap: 0;
 `;
 
+const ViewMore = styled.span`
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 14px;
+  align-self: flex-end;
+  color: #b9ff66;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.2s ease, text-decoration-color 0.2s ease;
+  
+  svg {
+    width: 14px;
+    height: 14px;
+    fill: #b9ff66;
+    transition: transform 0.2s ease;
+  }
+  
+  &:hover {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-thickness: 2px;
+  }
+  
+  &:hover svg {
+    transform: translateX(2px);
+  }
+  
+  @media (max-width: 768px) {
+    align-self: center;
+    font-size: 0.9rem;
+  }
+`;
+
 const ExperienceCard = ({ 
   title, 
   company,
@@ -137,10 +173,11 @@ const ExperienceCard = ({
   icon,
   iconBg,
   iconMaskSrc,
+  onClick,
   ...props 
 }) => {
   return (
-    <ExperienceCardWrapper {...props}>
+    <ExperienceCardWrapper onClick={onClick} {...props}>
       <IconContainer bg={iconBg} maskSrc={iconMaskSrc}>
         {typeof icon === 'string' ? (
           <IconSvg viewBox="0 0 24 24">
@@ -188,6 +225,13 @@ const ExperienceCard = ({
         >
           {description}
         </Typography>
+        
+        <ViewMore aria-label="Ver más detalles de la experiencia">
+          Ver más
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14" aria-hidden="true">
+            <path d="M0.311157 11.9973C-0.103731 12.4122 -0.103731 13.0849 0.311157 13.4998C0.726045 13.9146 1.39871 13.9146 1.8136 13.4998L1.06238 12.7485L0.311157 11.9973ZM13.811 1.06228C13.811 0.475543 13.3354 -0.00010317 12.7486 -0.000102706H3.18715C2.60041 -0.000103043 2.12476 0.475544 2.12476 1.06228C2.12476 1.64902 2.60041 2.12467 3.18715 2.12467H11.6862V10.6238C11.6862 11.2105 12.1619 11.6861 12.7486 11.6861C13.3354 11.6861 13.811 11.2105 13.811 10.6238V1.06228ZM1.06238 12.7485L1.8136 13.4998L13.4998 1.8135L12.7486 1.06228L11.9974 0.311063L0.311157 11.9973L1.06238 12.7485Z" />
+          </svg>
+        </ViewMore>
       </ContentContainer>
     </ExperienceCardWrapper>
   );

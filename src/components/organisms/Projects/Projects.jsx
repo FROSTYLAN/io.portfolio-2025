@@ -154,7 +154,7 @@ const projectsData = [
       { name: "Express", icon: <NodeJsIcon />, color: "linear-gradient(103deg, #17200C 16.66%, #080E02 81.61%)" },
       { name: "MongoDB", icon: <TailwindIcon />, color: "linear-gradient(103deg, #17200C 16.66%, #080E02 81.61%)" }
     ],
-    demoUrl: "#"
+    demoUrl: "https://demo-coplacont.netlify.app"
   },
 
   {
@@ -167,7 +167,7 @@ const projectsData = [
       { name: "Express", icon: <NodeJsIcon />, color: "linear-gradient(103deg, #17200C 16.66%, #080E02 81.61%)" },
       { name: "MongoDB", icon: <TailwindIcon />, color: "linear-gradient(103deg, #17200C 16.66%, #080E02 81.61%)" }
     ],
-    demoUrl: "#"
+    demoUrl: "https://demo-smart-talent.netlify.app"
   },
   {
     id: 3,
