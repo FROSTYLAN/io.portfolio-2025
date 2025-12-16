@@ -1,6 +1,7 @@
 import { NavBar, Hero, Techs, AboutMe, Projects, Experience, Footer } from './components/organisms';
 import ctaBg from './components/organisms/Footer/container.png';
 import './App.css'
+import cvFile from './documents/cv-charles-castillo-full-stack.pdf';
 
 function App() {
   return (
@@ -20,7 +21,15 @@ function App() {
             >
               Contáctame
             </button>
-            <button className="hero__content--button--secondary">Descarga mi CV</button>
+            <a
+              className="hero__content--button--secondary"
+              href={cvFile}
+              target="_blank"
+              rel="noopener noreferrer"
+              download
+            >
+              Descargar CV
+            </a>
           </section>
           <section className="hero__content--stats-container">
             <div className="hero__content--stats">

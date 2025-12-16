@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { Typography, Container, Button, Divider } from '../../atoms';
 import { useState } from 'react';
+import cvFile from '../../../documents/cv-charles-castillo-full-stack.pdf';
 
 const FooterWrapper = styled.footer`
   padding: 0 0 40px;
@@ -450,7 +451,7 @@ const Footer = () => {
           </FooterModalHeader>
           <FooterModalActions>
             <FooterModalButton as="a" href="https://wa.me/51977774529" target="_blank" rel="noopener noreferrer">Ir a WhatsApp</FooterModalButton>
-            <FooterModalButton as="a" href="https://www.linkedin.com/in/charles-castillo-772968234" target="_blank" rel="noopener noreferrer">Ver CV</FooterModalButton>
+            <FooterModalButton as="a" href={cvFile} target="_blank" rel="noopener noreferrer" download>Ver CV</FooterModalButton>
           </FooterModalActions>
         </FooterModalContainer>
       )}
