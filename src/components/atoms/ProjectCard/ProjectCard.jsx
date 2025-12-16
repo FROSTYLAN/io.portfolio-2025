@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { useState } from 'react';
 import { Typography, Button } from '../index';
 
 const ProjectCardWrapper = styled.div`
@@ -36,36 +35,13 @@ background: radial-gradient(74.78% 74.78% at 50.11% 0%, rgba(255, 255, 255, 0.08
 const ProjectImage = styled.img`
   margin: 0;
   width: 100%;
-  height: 100%;
+  height: auto;
+  max-height: 400px;
   object-fit: contain;
   object-position: center;
   display: block;
-  opacity: ${props => (props.$loaded ? 1 : 0)};
-  transition: opacity 220ms ease;
 `;
 
-const ImageWrapper = styled.div`
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  max-height: 400px;
-  border-radius: 16px;
-  background: rgba(255, 255, 255, 0.06);
-  position: relative;
-  overflow: hidden;
-`;
-
-const ImageSkeleton = styled.div`
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(90deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.08) 50%, rgba(255,255,255,0.04) 100%);
-  animation: shimmer 1.6s infinite;
-  z-index: 1;
-  
-  @keyframes shimmer {
-    0% { transform: translateX(-100%); }
-    100% { transform: translateX(100%); }
-  }
-`;
 const ProjectContent = styled.div`
   padding: 0;
   flex: 1;
@@ -237,7 +213,6 @@ const ProjectCard = ({
   onDemoClick,
   ...props 
 }) => {
-  const [imgLoaded, setImgLoaded] = useState(false);
   const handleDemoClick = () => {
     if (onDemoClick) {
       onDemoClick();
@@ -248,17 +223,7 @@ const ProjectCard = ({
 
   return (
     <ProjectCardWrapper {...props}>
-      <ImageWrapper>
-        <ProjectImage
-          src={image}
-          alt={title || 'Proyecto'}
-          loading="lazy"
-          decoding="async"
-          $loaded={imgLoaded}
-          onLoad={() => setImgLoaded(true)}
-        />
-        {!imgLoaded && <ImageSkeleton />}
-      </ImageWrapper>
+      <ProjectImage src={image} alt={title || 'Proyecto'} />
       
       <ProjectContent>
         <ProjectHeader>

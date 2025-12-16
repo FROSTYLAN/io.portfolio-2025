@@ -10,13 +10,13 @@ const Hero = ({ children }) => {
   return (
     <div className="hero">
       <div className='hero__green-gradient'>
-        <img src={greenGradient} alt="Green Gradient" loading="lazy" decoding="async" />
+        <img src={greenGradient} alt="Green Gradient" />
       </div>
       <div className='hero__atom'>
-        <img src={atom} alt="Atom 3D" loading="lazy" decoding="async" />
+        <img src={atom} alt="Atom 3D" />
       </div>
       <div className='hero__charles'>
-        <img src={charles3d} alt="Charles 3D" loading="eager" decoding="async" fetchpriority="high" />
+        <img src={charles3d} alt="Charles 3D" />
       </div>
       <div className='hero__in-icon'>
         <a
@@ -25,7 +25,7 @@ const Hero = ({ children }) => {
           rel="noopener noreferrer"
           aria-label="LinkedIn de Charles Castillo"
         >
-          <img src={linkedin} alt="LinkedIn" loading="lazy" decoding="async" />
+          <img src={linkedin} alt="LinkedIn" />
         </a>
       </div>
       <div className='hero__gh-icon'>
@@ -35,14 +35,14 @@ const Hero = ({ children }) => {
           rel="noopener noreferrer"
           aria-label="Mi perfil de GitHub"
         >
-          <img src={github} alt="GitHub" loading="lazy" decoding="async" />
+          <img src={github} alt="GitHub" />
         </a>
       </div>
       <div className='hero__atom-2'>
-        <img src={atom3d} alt="Atom 3D" loading="lazy" decoding="async" />
+        <img src={atom3d} alt="Atom 3D" />
       </div>
       <div className='hero__atom-3'>
-        <img src={atom3d} alt="Atom 3D" loading="lazy" decoding="async" />
+        <img src={atom3d} alt="Atom 3D" />
       </div>
       <div className='hero__content'>
         {children}
