@@ -3,6 +3,17 @@ import ctaBg from './components/organisms/Footer/container.png';
 import './App.css'
 import styled from 'styled-components'
 import { useEffect, useState } from 'react'
+import heroGreen from './assets/green-gradient.png'
+import heroCharles from './assets/charles-3d.png'
+import heroAtom3d from './assets/atom-3d.svg'
+import heroAtom from './assets/atom.svg'
+import linkedinIcon from './assets/LinkedIn.svg'
+import githubIcon from './assets/GitHub.svg'
+import projectsBg from './components/organisms/Projects/background.png'
+import demoAuditia from './components/organisms/Projects/demo.auditia.png'
+import demoDigenio from './components/organisms/Projects/demo.digenio.png'
+import demoSmartTalent from './components/organisms/Projects/demo.smarttalent.png'
+import demoCoplacont from './components/organisms/Projects/demo.coplacont.png'
 
 const LoaderOverlay = styled.div`
   position: fixed;
@@ -29,20 +40,47 @@ const LoaderSpinner = styled.div`
 
 function App() {
   const [appLoading, setAppLoading] = useState(true)
+  const [pageReady, setPageReady] = useState(false)
+  const [assetsReady, setAssetsReady] = useState(false)
+
+  const preloadImage = (src: string) => new Promise<void>((resolve) => {
+    const img = new Image()
+    img.onload = () => resolve()
+    img.onerror = () => resolve()
+    img.src = src
+  })
 
   useEffect(() => {
-    const onLoad = () => setAppLoading(false)
+    const onLoad = () => setPageReady(true)
     if (document.readyState === 'complete') {
-      setAppLoading(false)
+      setPageReady(true)
     } else {
       window.addEventListener('load', onLoad)
     }
-    const timeout = setTimeout(() => setAppLoading(false), 2500)
+    const assets = [
+      heroGreen,
+      heroCharles,
+      heroAtom3d,
+      heroAtom,
+      linkedinIcon,
+      githubIcon,
+      projectsBg,
+      demoAuditia,
+      demoDigenio,
+      demoSmartTalent,
+      demoCoplacont
+    ]
+    Promise.all(assets.map(preloadImage)).then(() => setAssetsReady(true))
     return () => {
       window.removeEventListener('load', onLoad)
-      clearTimeout(timeout)
     }
   }, [])
+
+  useEffect(() => {
+    if (pageReady && assetsReady) {
+      setAppLoading(false)
+    }
+  }, [pageReady, assetsReady])
 
   return (
     <>
