@@ -340,6 +340,7 @@
     background: rgba(255, 255, 255, 0.08);
     cursor: pointer;
     transition: all 0.25s ease;
+    color: inherit;
 }
 
 .hero__content--button--secondary:hover {
@@ -348,6 +349,7 @@
     backdrop-filter: blur(12px);
     transform: translateY(-1px);
     box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
+    color: inherit;
 }
 
 .hero__content--button--secondary:active {

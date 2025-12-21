@@ -163,10 +163,11 @@ const NavBar = () => {
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ 
-        behavior: 'smooth',
-        block: 'start'
-      });
+      const navOffset = 90;
+      const rectTop = element.getBoundingClientRect().top + window.scrollY;
+      const targetTop = Math.max(rectTop - navOffset, 0);
+      window.scrollTo({ top: targetTop, behavior: 'smooth' });
+      setActiveSection(sectionId);
     }
     // Cerrar menú móvil si está abierto
     if (mobileMenuOpen) {
@@ -199,7 +200,8 @@ const NavBar = () => {
                 <NavLink
                   key={item.id}
                   className={activeSection === item.id ? 'active' : ''}
-                  onClick={() => scrollToSection(item.id)}
+                  href={`#${item.id}`}
+                  onClick={(e) => { e.preventDefault(); scrollToSection(item.id); }}
                 >
                   {item.label}
                 </NavLink>
